@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico de Perfil Profissional | Analu Figueyra</title>
+  <meta name="description" content="O diagnóstico que revela por que você trabalha tanto, entrega tanto, e ainda sente que nunca é suficiente." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0c0b0f;
+      --bg2: #13111a;
+      --bg3: #1a1724;
+      --bg4: #100e18;
+      --accent: #c4a0c8;
+      --accent2: #9b6ea8;
+      --warm: #e8b89a;
+      --gold: #c9a96e;
+      --text: #f0eaf4;
+      --muted: #9b96a8;
+      --border: #2a2535;
+      --border2: #3a3050;
+      --cta: #c4a0c8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 64px 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    .ornament { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+    .ornament-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--accent2)); }
+    .ornament-line.right { background: linear-gradient(90deg, var(--accent2), transparent); }
+    .ornament-diamond { width: 6px; height: 6px; background: var(--accent); transform: rotate(45deg); flex-shrink: 0; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(180deg, #1c1230 0%, #130f1e 60%, var(--bg) 100%);
+      padding: 80px 0 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(155,110,168,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10px; font-weight: 600; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold);
+      border: 1px solid rgba(201,169,110,0.4);
+      border-radius: 100px; padding: 5px 18px; margin-bottom: 32px;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 8vw, 58px);
+      line-height: 1.15; color: #fff; margin-bottom: 20px;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--accent); }
+
+    .hero .sub {
+      font-size: 17px; color: var(--muted);
+      max-width: 500px; margin: 0 auto 16px; line-height: 1.7;
+    }
+
+    .hero .sub strong { color: var(--text); }
+
+    .hero .sub-small {
+      font-size: 14px; color: var(--muted);
+      max-width: 400px; margin: 0 auto 40px; font-style: italic;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent2), #7a4fa0);
+      color: #fff; font-size: 15px; font-weight: 600;
+      padding: 17px 40px; border-radius: 100px;
+      text-decoration: none; letter-spacing: 0.3px;
+      transition: opacity 0.2s, transform 0.15s;
+      box-shadow: 0 8px 32px rgba(155,110,168,0.3);
+    }
+
+    .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+    .hero-note { font-size: 12px; color: var(--muted); margin-top: 16px; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ── DOR ── */
+    .dor h2 { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 5vw, 36px); line-height: 1.25; color: #fff; margin-bottom: 28px; }
+
+    .cena-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+    .cena-list li {
+      padding: 16px 20px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--accent2);
+      border-radius: 0 10px 10px 0;
+      font-size: 15px; color: var(--text); line-height: 1.6;
+    }
+
+    /* ── PARA QUEM ── */
+    .para-quem h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 28px; }
+
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+    .check-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 15px; color: var(--text); line-height: 1.5;
+    }
+
+    .check-list li::before {
+      content: '◆'; color: var(--accent);
+      flex-shrink: 0; margin-top: 3px; font-size: 9px;
+    }
+
+    /* ── ENTREGA ── */
+    .entrega h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 10px; }
+    .entrega .intro { color: var(--muted); font-size: 15px; margin-bottom: 32px; }
+
+    .entrega-cards { display: flex; flex-direction: column; gap: 16px; }
+
+    .entrega-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px 26px;
+    }
+
+    .entrega-card .ec-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+    }
+
+    .entrega-card strong {
+      display: block; font-size: 17px; font-weight: 600;
+      color: var(--text); margin-bottom: 12px;
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .entrega-card .sub-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+    .entrega-card .sub-items li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--muted); line-height: 1.5;
+    }
+
+    .entrega-card .sub-items li::before {
+      content: '→'; color: var(--accent); flex-shrink: 0; font-weight: 600;
+    }
+
+    /* ── ANTES/DEPOIS ── */
+    .antes-depois { background: var(--bg4); }
+    .antes-depois h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 28px; }
+
+    .ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .ad-col { display: flex; flex-direction: column; gap: 10px; }
+
+    .ad-header {
+      text-align: center; padding: 10px 14px;
+      border-radius: 10px; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.5px; margin-bottom: 4px;
+    }
+
+    .ad-header.sem { background: rgba(255,80,80,0.08); color: #ff8080; border: 1px solid rgba(255,80,80,0.2); }
+    .ad-header.com { background: rgba(155,110,168,0.1); color: var(--accent); border: 1px solid var(--border2); }
+
+    .ad-item {
+      padding: 14px 16px; border-radius: 10px;
+      font-size: 13px; line-height: 1.55;
+    }
+
+    .ad-item.sem { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); }
+    .ad-item.com { background: rgba(155,110,168,0.06); border: 1px solid var(--border2); color: var(--text); }
+
+    /* ── DEPOIMENTOS ── */
+    .depoimentos h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 8px; }
+    .depoimentos .intro { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
+
+    .depo-numero {
+      display: inline-block; background: linear-gradient(135deg, var(--accent2), #7a4fa0);
+      color: #fff; font-size: 28px; font-weight: 700;
+      font-family: 'DM Serif Display', serif;
+      padding: 10px 20px; border-radius: 10px; margin-bottom: 20px;
+    }
+
+    .depo-cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .depo-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px 22px;
+    }
+
+    .depo-stars { color: var(--gold); font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; }
+
+    .depo-texto {
+      font-size: 14px; color: var(--muted);
+      line-height: 1.7; font-style: italic; margin-bottom: 12px;
+    }
+
+    .depo-texto strong { color: var(--text); font-style: normal; }
+
+    .depo-autor {
+      font-size: 12px; color: var(--accent);
+      font-weight: 500; font-style: normal;
+    }
+
+    /* ── SOBRE ── */
+    .sobre { background: var(--bg2); }
+
+    .sobre-inner {
+      display: flex; gap: 28px;
+      align-items: flex-start; margin-bottom: 24px;
+    }
+
+    .sobre-foto {
+      width: 110px; height: 110px; border-radius: 50%;
+      object-fit: cover; flex-shrink: 0;
+      border: 2px solid var(--accent2);
+      box-shadow: 0 0 24px rgba(155,110,168,0.25);
+    }
+
+    .sobre-texto h2 { font-family: 'DM Serif Display', serif; font-size: clamp(22px, 4vw, 30px); color: #fff; margin-bottom: 4px; }
+    .sobre .sub-sobre { color: var(--gold); font-size: 13px; font-weight: 500; margin-bottom: 16px; letter-spacing: 0.5px; }
+    .sobre p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
+    .sobre p strong { color: var(--text); }
+
+    .credenciais { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+
+    .cred-item {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 12px; color: var(--muted);
+    }
+
+    /* ── PREÇO ── */
+    .preco { text-align: center; }
+    .preco h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 32px; }
+
+    .bonus-box {
+      background: rgba(201,169,110,0.06);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 14px; padding: 20px 24px;
+      margin: 0 auto 20px; max-width: 440px; text-align: left;
+    }
+
+    .bonus-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+    }
+
+    .bonus-box p { font-size: 14px; color: var(--muted); margin-bottom: 6px; }
+    .bonus-box strong { color: var(--text); }
+
+    .preco-box {
+      background: linear-gradient(160deg, #1e1530 0%, #130f1e 100%);
+      border: 1px solid var(--border2); border-radius: 20px;
+      padding: 40px 32px; max-width: 440px;
+      margin: 0 auto 20px; position: relative; overflow: hidden;
+    }
+
+    .preco-box::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(155,110,168,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .preco-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px; }
+    .preco-riscado { font-size: 14px; color: var(--muted); text-decoration: line-through; margin-bottom: 4px; }
+
+    .preco-valor {
+      font-family: 'DM Serif Display', serif;
+      font-size: 56px; color: #fff; line-height: 1; margin-bottom: 4px;
+    }
+
+    .preco-valor sup { font-family: 'Inter', sans-serif; font-size: 22px; color: var(--muted); font-weight: 400; vertical-align: super; }
+    .preco-parcelado { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .preco-pix { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+
+    .preco-divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+    .preco-includes { list-style: none; text-align: left; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; }
+
+    .preco-includes li {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; color: var(--text);
+    }
+
+    .preco-includes li::before {
+      content: '✓'; width: 20px; height: 20px;
+      background: rgba(196,160,200,0.12);
+      border: 1px solid var(--accent2); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 10px; color: var(--accent); font-weight: 700;
+    }
+
+    .garantia-box {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px; margin: 0 auto; max-width: 440px;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+
+    .garantia-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 40px; color: var(--accent); flex-shrink: 0; line-height: 1;
+    }
+
+    .garantia-texto strong { display: block; font-size: 14px; color: var(--text); margin-bottom: 4px; }
+    .garantia-texto p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      text-align: center;
+      background: linear-gradient(180deg, var(--bg) 0%, #1c1230 100%);
+      padding: 80px 0;
+    }
+
+    .cta-final h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 6vw, 44px); color: #fff; margin-bottom: 12px; line-height: 1.2; }
+    .cta-final h2 em { font-style: italic; color: var(--accent); }
+    .cta-final p { color: var(--muted); font-size: 16px; margin-bottom: 36px; }
+
+    footer {
+      text-align: center; padding: 28px 24px;
+      font-size: 12px; color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 480px) {
+      .ad-grid { grid-template-columns: 1fr; }
+      .preco-box { padding: 32px 20px; }
+      .preco-valor { font-size: 46px; }
+      .sobre-inner { flex-direction: column; align-items: center; text-align: center; }
+      .sobre-foto { width: 96px; height: 96px; }
+      .credenciais { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="tag">Diagnóstico de Perfil Profissional</span>
+      <h1>Você trabalha tanto.<br>Entrega tanto.<br>E ainda sente que <em>nunca é suficiente.</em></h1>
+      <p class="sub">
+        Entenda o padrão que te mantém <strong>forte por fora e travada por dentro</strong> e saiba exatamente o que precisa mudar agora.
+      </p>
+      <p class="sub-small">Para mulheres CLT e CNPJ que cansaram de dar conta de tudo e não crescer como poderiam.</p>
+      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero fazer o diagnóstico</a>
+      <p class="hero-note">R$37 · Acesso imediato · 7 dias de garantia</p>
+    </div>
+  </section>
+
+  <!-- DOR -->
+  <section class="dor">
+    <div class="container">
+      <h2>Eu sei exatamente como você se sente.</h2>
+      <ul class="cena-list">
+        <li>Você aceita mais uma tarefa mesmo com a agenda cheia, responde mensagem fora do horário, revisa três vezes antes de entregar e ainda pensa que podia ter feito melhor.</li>
+        <li>Você sai da reunião decidida a provar valor, assume o que ninguém quis assumir e volta pra mesa já planejando como vai dar conta sozinha. Porque no fundo acredita que, se não fizer, algo vai sair errado.</li>
+        <li>Você vive em alerta: se o cliente reclama, se o chefe muda o tom, se o faturamento oscila... seu corpo já entende como sinal de perigo, e você trabalha dobrado pra evitar qualquer risco.</li>
+        <li>O medo de não ser suficiente faz você dizer "deixa que eu resolvo", mesmo cansada, e virar a pessoa que sempre entrega, mas quase nunca é promovida no ritmo que poderia.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section class="para-quem">
+    <div class="container">
+      <h2>Esse diagnóstico é pra você se...</h2>
+      <ul class="check-list">
+        <li>Você trabalha muito, entrega tudo, mas sente que nunca é suficiente e está ficando para trás</li>
+        <li>Você vive no automático: resolve, ajuda, assume, mas não cresce na mesma proporção</li>
+        <li>Você se perdeu no meio de tantas tarefas, vive cansada e não sente mais prazer no que faz</li>
+        <li>No CLT você segura o time. No negócio você segura cliente, operação e decisões, tudo ao mesmo tempo</li>
+        <li>Você já percebeu que faz mais do que deveria, mas não consegue parar</li>
+        <li>Você quer ser reconhecida, crescer e ganhar mais, sem precisar se provar o tempo todo</li>
+        <li>Você já entendeu que não é falta de capacidade, mas ainda não sabe o que mudar</li>
+        <li>Você quer sair do padrão de "dar conta de tudo" e começar a crescer com estratégia</li>
+        <li>Você quer clareza prática: o que continuar, o que parar e o que precisa mudar agora</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section class="entrega">
+    <div class="container">
+      <h2>O que você vai receber</h2>
+      <p class="intro">Um mapa claro do seu padrão profissional.</p>
+      <div class="entrega-cards">
+
+        <div class="entrega-card">
+          <div class="ec-label">Parte 1</div>
+          <strong>Diagnóstico de Perfil Profissional</strong>
+          <ul class="sub-items">
+            <li>21 perguntas que revelam por que você assume tudo sozinha, trabalha além do necessário e ainda sente que nunca é suficiente</li>
+            <li>Identificação do seu perfil predominante: Executora, Comunicadora, Planejadora ou Detalhista</li>
+            <li>Raio-X do comportamento que está custando seu crescimento agora</li>
+          </ul>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">Parte 2</div>
+          <strong>Manual Personalizado do seu Padrão Profissional</strong>
+          <ul class="sub-items">
+            <li>Como você age no trabalho e no negócio: sob pressão, em grupo, nas decisões importantes</li>
+            <li>Onde sua força vira excesso e começa a te sobrecarregar</li>
+            <li>O padrão invisível que te faz trabalhar muito e crescer menos do que poderia</li>
+            <li>Microações simples para sair do automático sem perder sua identidade</li>
+            <li>Como ser reconhecida, delegar melhor e parar de carregar tudo nas costas</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES E DEPOIS -->
+  <section class="antes-depois">
+    <div class="container">
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <h2>O que muda com o diagnóstico</h2>
+      <div class="ad-grid">
+        <div class="ad-col">
+          <div class="ad-header sem">Sem o diagnóstico</div>
+          <div class="ad-item sem">Sai aceitando tudo: nova tarefa, cliente, reunião, urgência, mesmo sem espaço na agenda, só pra não parecer que não dá conta.</div>
+          <div class="ad-item sem">Vive ocupada o dia inteiro, mas chega no fim do mês sem crescimento proporcional, dinheiro ou reconhecimento.</div>
+          <div class="ad-item sem">Fica nos bastidores resolvendo tudo, apagando incêndio, enquanto outras aparecem mais.</div>
+          <div class="ad-item sem">Trabalha até cansar, revisa mil vezes e ainda trava na hora de decidir o próximo passo.</div>
+        </div>
+        <div class="ad-col">
+          <div class="ad-header com">Com o diagnóstico</div>
+          <div class="ad-item com">Aprende a trabalhar com estratégia, não no automático, e para de assumir tudo só por medo ou impulso.</div>
+          <div class="ad-item com">Entende o que realmente gera crescimento e começa a direcionar energia pro que dá retorno.</div>
+          <div class="ad-item com">Sai do papel de quem só sustenta tudo e começa a se posicionar, aparecer e ser reconhecida pelo que entrega.</div>
+          <div class="ad-item com">Passa a decidir com mais clareza, agir sem travar e usar seu padrão como força, sem se esgotar no processo.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depoimentos">
+    <div class="container">
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <h2>Quem já fez o diagnóstico</h2>
+      <p class="intro">Mais de 115 mulheres já deram o primeiro passo.</p>
+      <div class="depo-cards">
+
+        <div class="depo-card">
+          <div class="depo-stars">★★★★★</div>
+          <p class="depo-texto">"Achei maravilhoso! Muito esclarecedor e motivador. Percebi coisas que nem prestava atenção. Me fez ver como é possível com pequenos atos ter resultados ótimos, muito claro e objetivo. <strong>Acabei de ler e fazer as tarefas e já senti uma transformação acontecendo.</strong>"</p>
+          <span class="depo-autor">Cliente do diagnóstico</span>
+        </div>
+
+        <div class="depo-card">
+          <div class="depo-stars">★★★★★</div>
+          <p class="depo-texto">"Essa análise está sendo um divisor de águas na minha vida. Venho me libertando de tantas amarras. Tenho agora coragem pra fazer tantas coisas que não me permitia. <strong>Como agora me compreendo, me sinto em paz comigo mesma e me respeito mais.</strong> Obrigada por esse trabalho tão lindo e libertador."</p>
+          <span class="depo-autor">Cliente do diagnóstico</span>
+        </div>
+
+        <div class="depo-card">
+          <div class="depo-stars">★★★★★</div>
+          <p class="depo-texto">"Você passa a mensagem de forma tão clara que fiquei impactada com tudo. <strong>Isso abriu minha visão para algumas falhas que estou cometendo e que irei melhorar.</strong>"</p>
+          <span class="depo-autor">Cliente do diagnóstico</span>
+        </div>
+
+        <div class="depo-card">
+          <div class="depo-stars">★★★★★</div>
+          <p class="depo-texto">"<strong>Já fez você me ajudou a me reencontrar.</strong> E fazer diferente o que me deixava triste."</p>
+          <span class="depo-autor">Cliente do diagnóstico</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre">
+    <div class="container">
+      <div class="sobre-inner">
+        <img src="foto.png" alt="Analu Figueyra" class="sobre-foto" />
+        <div class="sobre-texto">
+          <h2>Analu Figueyra</h2>
+          <p class="sub-sobre">Comportamento Profissional Feminino</p>
+          <p>Criei esse diagnóstico depois de enxergar um padrão que se repete tanto pra quem é CLT quanto pra quem tem CNPJ: <strong>mulheres competentes que trabalham demais, assumem tudo sozinhas e ainda sentem que estão ficando para trás.</strong></p>
+          <p>Estou aqui pra te mostrar por que você faz tanto e ainda se sente pra trás, e como virar esse jogo agora.</p>
+        </div>
+      </div>
+      <div class="credenciais">
+        <span class="cred-item">14 anos em comportamento profissional</span>
+        <span class="cred-item">Ex-CLT, 10 anos em RH</span>
+        <span class="cred-item">MBA em Gestão de Pessoas</span>
+        <span class="cred-item">Coach pela Febracis</span>
+        <span class="cred-item">Analista de Perfil Comportamental</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREÇO -->
+  <section class="preco" id="checkout">
+    <div class="container">
+      <h2>Invista no diagnóstico</h2>
+
+      <div class="bonus-box">
+        <div class="bonus-label">Bônus incluído</div>
+        <p><strong>Manual Personalizado do seu Padrão Profissional</strong></p>
+        <p>De R$97,00, você leva de graça junto com o diagnóstico.</p>
+      </div>
+
+      <div class="preco-box">
+        <p class="preco-label">Diagnóstico de Perfil Profissional</p>
+        <p class="preco-riscado">De R$197,00</p>
+        <p class="preco-valor"><sup>R$</sup>37</p>
+        <p class="preco-parcelado">ou 8x de R$5,38</p>
+        <p class="preco-pix">Pix ou cartão de crédito · Acesso imediato</p>
+        <div class="preco-divider"></div>
+        <ul class="preco-includes">
+          <li>21 perguntas de diagnóstico do perfil</li>
+          <li>Identificação do seu padrão predominante</li>
+          <li>Manual personalizado por perfil</li>
+          <li>Microações práticas para sair do automático</li>
+          <li>Bônus: Manual do Padrão Profissional (R$97)</li>
+        </ul>
+        <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn" style="width:100%;text-align:center;display:block;">
+          Quero fazer o diagnóstico por R$37
+        </a>
+      </div>
+
+      <div class="garantia-box">
+        <div class="garantia-num">7</div>
+        <div class="garantia-texto">
+          <strong>Dias de Garantia Total</strong>
+          <p>Se em 7 dias você não identificar pelo menos um comportamento que te faz assumir mais do que deveria e se sobrecarregar, eu devolvo 100% do valor.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="container">
+      <div class="ornament" style="margin-bottom:32px;">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <h2>Pare de trabalhar no <em>automático.</em><br>Entenda o seu padrão.</h2>
+      <p>Clareza prática. Resultado real. Por R$37.</p>
+      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero fazer o diagnóstico</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Analu Figueyra · <a href="https://instagram.com/analulismu" target="_blank">@analulismu</a></p>
+  </footer>
+
+</body>
+</html>
