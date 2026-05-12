@@ -11,19 +11,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0c0b0f;
-      --bg2: #13111a;
-      --bg3: #1a1724;
-      --bg4: #100e18;
-      --accent: #c4a0c8;
+      --bg: #faf7f2;
+      --bg2: #f2ede5;
+      --bg3: #e8e0d4;
+      --bg4: #ede7de;
+      --accent: #7a4fa0;
       --accent2: #9b6ea8;
-      --warm: #e8b89a;
-      --gold: #c9a96e;
-      --text: #f0eaf4;
-      --muted: #9b96a8;
-      --border: #2a2535;
-      --border2: #3a3050;
-      --cta: #c4a0c8;
+      --accent-light: rgba(122,79,160,0.08);
+      --warm: #c97b3a;
+      --gold: #a07830;
+      --text: #1a1510;
+      --muted: #6b5f52;
+      --border: #ddd5c8;
+      --border2: #c9bfb0;
+      --cta: #7a4fa0;
     }
 
     html { scroll-behavior: smooth; }
@@ -42,13 +43,13 @@
     section + section { border-top: 1px solid var(--border); }
 
     .ornament { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
-    .ornament-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--accent2)); }
-    .ornament-line.right { background: linear-gradient(90deg, var(--accent2), transparent); }
-    .ornament-diamond { width: 6px; height: 6px; background: var(--accent); transform: rotate(45deg); flex-shrink: 0; }
+    .ornament-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border2)); }
+    .ornament-line.right { background: linear-gradient(90deg, var(--border2), transparent); }
+    .ornament-diamond { width: 6px; height: 6px; background: var(--accent2); transform: rotate(45deg); flex-shrink: 0; }
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(180deg, #1c1230 0%, #130f1e 60%, var(--bg) 100%);
+      background: linear-gradient(180deg, #f0e8f5 0%, #faf7f2 100%);
       padding: 80px 0 72px;
       text-align: center;
       position: relative;
@@ -58,10 +59,10 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -80px; left: 50%;
+      top: -60px; left: 50%;
       transform: translateX(-50%);
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(155,110,168,0.12) 0%, transparent 70%);
+      width: 500px; height: 400px;
+      background: radial-gradient(circle, rgba(155,110,168,0.1) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -69,14 +70,15 @@
       display: inline-block;
       font-size: 10px; font-weight: 600; letter-spacing: 3px;
       text-transform: uppercase; color: var(--gold);
-      border: 1px solid rgba(201,169,110,0.4);
+      border: 1px solid rgba(160,120,48,0.35);
       border-radius: 100px; padding: 5px 18px; margin-bottom: 32px;
+      background: rgba(160,120,48,0.06);
     }
 
     .hero h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(36px, 8vw, 58px);
-      line-height: 1.15; color: #fff; margin-bottom: 20px;
+      font-size: clamp(36px, 8vw, 56px);
+      line-height: 1.15; color: var(--text); margin-bottom: 20px;
     }
 
     .hero h1 em { font-style: italic; color: var(--accent); }
@@ -90,60 +92,84 @@
 
     .hero .sub-small {
       font-size: 14px; color: var(--muted);
-      max-width: 400px; margin: 0 auto 40px; font-style: italic;
+      max-width: 420px; margin: 0 auto 40px; font-style: italic;
     }
 
     .btn {
       display: inline-block;
-      background: linear-gradient(135deg, var(--accent2), #7a4fa0);
+      background: linear-gradient(135deg, #7a4fa0, #5a3080);
       color: #fff; font-size: 15px; font-weight: 600;
       padding: 17px 40px; border-radius: 100px;
       text-decoration: none; letter-spacing: 0.3px;
       transition: opacity 0.2s, transform 0.15s;
-      box-shadow: 0 8px 32px rgba(155,110,168,0.3);
+      box-shadow: 0 8px 28px rgba(122,79,160,0.25);
     }
 
     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
     .hero-note { font-size: 12px; color: var(--muted); margin-top: 16px; letter-spacing: 1px; text-transform: uppercase; }
 
     /* ── DOR ── */
-    .dor h2 { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 5vw, 36px); line-height: 1.25; color: #fff; margin-bottom: 28px; }
+    .dor h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); line-height: 1.25; color: var(--text); margin-bottom: 28px; }
 
-    .cena-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .cena-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
 
-    .cena-list li {
-      padding: 16px 20px;
-      background: var(--bg2);
+    .cena-card {
+      background: #fff;
       border: 1px solid var(--border);
-      border-left: 2px solid var(--accent2);
-      border-radius: 0 10px 10px 0;
-      font-size: 15px; color: var(--text); line-height: 1.6;
+      border-radius: 12px;
+      padding: 18px 20px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      border-top: 2px solid var(--accent2);
     }
 
     /* ── PARA QUEM ── */
-    .para-quem h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 28px; }
+    .para-quem { background: var(--bg2); }
+    .para-quem h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 28px; }
 
-    .check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-
-    .check-list li {
-      display: flex; align-items: flex-start; gap: 14px;
-      font-size: 15px; color: var(--text); line-height: 1.5;
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
     }
 
-    .check-list li::before {
-      content: '◆'; color: var(--accent);
-      flex-shrink: 0; margin-top: 3px; font-size: 9px;
+    .check-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .check-item::before {
+      content: '◆';
+      color: var(--accent2);
+      flex-shrink: 0;
+      font-size: 8px;
+      margin-top: 4px;
     }
 
     /* ── ENTREGA ── */
-    .entrega h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 10px; }
-    .entrega .intro { color: var(--muted); font-size: 15px; margin-bottom: 32px; }
+    .entrega h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 10px; }
+    .entrega .intro { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
 
-    .entrega-cards { display: flex; flex-direction: column; gap: 16px; }
+    .entrega-cards { display: flex; flex-direction: column; gap: 14px; }
 
     .entrega-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 14px; padding: 24px 26px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 26px;
     }
 
     .entrega-card .ec-label {
@@ -157,23 +183,20 @@
       font-family: 'DM Serif Display', serif;
     }
 
-    .entrega-card .sub-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .sub-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 
-    .entrega-card .sub-items li {
+    .sub-items li {
       display: flex; align-items: flex-start; gap: 10px;
       font-size: 14px; color: var(--muted); line-height: 1.5;
     }
 
-    .entrega-card .sub-items li::before {
-      content: '→'; color: var(--accent); flex-shrink: 0; font-weight: 600;
-    }
+    .sub-items li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-weight: 600; }
 
     /* ── ANTES/DEPOIS ── */
     .antes-depois { background: var(--bg4); }
-    .antes-depois h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 28px; }
+    .antes-depois h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 28px; }
 
     .ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
     .ad-col { display: flex; flex-direction: column; gap: 10px; }
 
     .ad-header {
@@ -182,48 +205,40 @@
       letter-spacing: 0.5px; margin-bottom: 4px;
     }
 
-    .ad-header.sem { background: rgba(255,80,80,0.08); color: #ff8080; border: 1px solid rgba(255,80,80,0.2); }
-    .ad-header.com { background: rgba(155,110,168,0.1); color: var(--accent); border: 1px solid var(--border2); }
+    .ad-header.sem { background: rgba(180,60,60,0.07); color: #a04040; border: 1px solid rgba(180,60,60,0.2); }
+    .ad-header.com { background: rgba(122,79,160,0.08); color: var(--accent); border: 1px solid rgba(122,79,160,0.2); }
 
     .ad-item {
-      padding: 14px 16px; border-radius: 10px;
-      font-size: 13px; line-height: 1.55;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 16px;
+      font-size: 13px; line-height: 1.55; color: var(--muted);
     }
 
-    .ad-item.sem { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); }
-    .ad-item.com { background: rgba(155,110,168,0.06); border: 1px solid var(--border2); color: var(--text); }
+    .ad-item.com { border-color: rgba(122,79,160,0.2); color: var(--text); }
 
     /* ── DEPOIMENTOS ── */
-    .depoimentos h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 8px; }
+    .depoimentos h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 8px; }
     .depoimentos .intro { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
-
-    .depo-numero {
-      display: inline-block; background: linear-gradient(135deg, var(--accent2), #7a4fa0);
-      color: #fff; font-size: 28px; font-weight: 700;
-      font-family: 'DM Serif Display', serif;
-      padding: 10px 20px; border-radius: 10px; margin-bottom: 20px;
-    }
 
     .depo-cards { display: flex; flex-direction: column; gap: 14px; }
 
     .depo-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 14px; padding: 20px 22px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 22px;
     }
 
     .depo-stars { color: var(--gold); font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; }
 
     .depo-texto {
-      font-size: 14px; color: var(--muted);
-      line-height: 1.7; font-style: italic; margin-bottom: 12px;
+      font-size: 15px; color: var(--muted);
+      line-height: 1.7; font-style: italic; margin-bottom: 10px;
     }
 
     .depo-texto strong { color: var(--text); font-style: normal; }
-
-    .depo-autor {
-      font-size: 12px; color: var(--accent);
-      font-weight: 500; font-style: normal;
-    }
+    .depo-autor { font-size: 12px; color: var(--accent); font-weight: 500; }
 
     /* ── SOBRE ── */
     .sobre { background: var(--bg2); }
@@ -237,68 +252,55 @@
       width: 110px; height: 110px; border-radius: 50%;
       object-fit: cover; flex-shrink: 0;
       border: 2px solid var(--accent2);
-      box-shadow: 0 0 24px rgba(155,110,168,0.25);
     }
 
-    .sobre-texto h2 { font-family: 'DM Serif Display', serif; font-size: clamp(22px, 4vw, 30px); color: #fff; margin-bottom: 4px; }
-    .sobre .sub-sobre { color: var(--gold); font-size: 13px; font-weight: 500; margin-bottom: 16px; letter-spacing: 0.5px; }
+    .sobre-texto h2 { font-family: 'DM Serif Display', serif; font-size: clamp(22px, 4vw, 28px); color: var(--text); margin-bottom: 4px; }
+    .sobre .sub-sobre { color: var(--gold); font-size: 13px; font-weight: 500; margin-bottom: 14px; }
     .sobre p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
     .sobre p strong { color: var(--text); }
 
     .credenciais { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 
     .cred-item {
-      background: var(--bg3); border: 1px solid var(--border);
+      background: #fff; border: 1px solid var(--border);
       border-radius: 100px; padding: 5px 14px;
       font-size: 12px; color: var(--muted);
     }
 
     /* ── PREÇO ── */
     .preco { text-align: center; }
-    .preco h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: #fff; margin-bottom: 32px; }
+    .preco h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 32px; }
 
     .bonus-box {
-      background: rgba(201,169,110,0.06);
-      border: 1px solid rgba(201,169,110,0.25);
+      background: rgba(160,120,48,0.06);
+      border: 1px solid rgba(160,120,48,0.25);
       border-radius: 14px; padding: 20px 24px;
       margin: 0 auto 20px; max-width: 440px; text-align: left;
     }
 
-    .bonus-label {
-      font-size: 10px; font-weight: 600; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
-    }
-
-    .bonus-box p { font-size: 14px; color: var(--muted); margin-bottom: 6px; }
+    .bonus-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .bonus-box p { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
     .bonus-box strong { color: var(--text); }
 
     .preco-box {
-      background: linear-gradient(160deg, #1e1530 0%, #130f1e 100%);
-      border: 1px solid var(--border2); border-radius: 20px;
-      padding: 40px 32px; max-width: 440px;
-      margin: 0 auto 20px; position: relative; overflow: hidden;
-    }
-
-    .preco-box::before {
-      content: '';
-      position: absolute; top: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(155,110,168,0.1) 0%, transparent 70%);
-      pointer-events: none;
+      background: #fff;
+      border: 1px solid var(--border2);
+      border-radius: 20px; padding: 40px 32px;
+      max-width: 440px; margin: 0 auto 20px;
+      box-shadow: 0 4px 32px rgba(122,79,160,0.08);
     }
 
     .preco-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px; }
-    .preco-riscado { font-size: 14px; color: var(--muted); text-decoration: line-through; margin-bottom: 4px; }
+    .preco-riscado { font-size: 14px; color: #bbb; text-decoration: line-through; margin-bottom: 4px; }
 
     .preco-valor {
       font-family: 'DM Serif Display', serif;
-      font-size: 56px; color: #fff; line-height: 1; margin-bottom: 4px;
+      font-size: 56px; color: var(--text); line-height: 1; margin-bottom: 4px;
     }
 
     .preco-valor sup { font-family: 'Inter', sans-serif; font-size: 22px; color: var(--muted); font-weight: 400; vertical-align: super; }
-    .preco-parcelado { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .preco-parcelado { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
     .preco-pix { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
-
     .preco-divider { height: 1px; background: var(--border); margin: 20px 0; }
 
     .preco-includes { list-style: none; text-align: left; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; }
@@ -310,9 +312,9 @@
 
     .preco-includes li::before {
       content: '✓'; width: 20px; height: 20px;
-      background: rgba(196,160,200,0.12);
-      border: 1px solid var(--accent2); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      background: rgba(122,79,160,0.08);
+      border: 1px solid rgba(122,79,160,0.3);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; font-size: 10px; color: var(--accent); font-weight: 700;
     }
 
@@ -322,22 +324,18 @@
       display: flex; gap: 16px; align-items: flex-start;
     }
 
-    .garantia-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 40px; color: var(--accent); flex-shrink: 0; line-height: 1;
-    }
-
+    .garantia-num { font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); flex-shrink: 0; line-height: 1; }
     .garantia-texto strong { display: block; font-size: 14px; color: var(--text); margin-bottom: 4px; }
     .garantia-texto p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
     /* ── CTA FINAL ── */
     .cta-final {
       text-align: center;
-      background: linear-gradient(180deg, var(--bg) 0%, #1c1230 100%);
+      background: linear-gradient(180deg, var(--bg) 0%, #ede5f5 100%);
       padding: 80px 0;
     }
 
-    .cta-final h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 6vw, 44px); color: #fff; margin-bottom: 12px; line-height: 1.2; }
+    .cta-final h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 6vw, 42px); color: var(--text); margin-bottom: 12px; line-height: 1.2; }
     .cta-final h2 em { font-style: italic; color: var(--accent); }
     .cta-final p { color: var(--muted); font-size: 16px; margin-bottom: 36px; }
 
@@ -345,16 +343,18 @@
       text-align: center; padding: 28px 24px;
       font-size: 12px; color: var(--muted);
       border-top: 1px solid var(--border);
+      background: var(--bg);
     }
 
     footer a { color: var(--accent); text-decoration: none; }
 
-    @media (max-width: 480px) {
+    @media (max-width: 520px) {
+      .cena-grid { grid-template-columns: 1fr; }
+      .check-grid { grid-template-columns: 1fr; }
       .ad-grid { grid-template-columns: 1fr; }
-      .preco-box { padding: 32px 20px; }
+      .preco-box { padding: 28px 18px; }
       .preco-valor { font-size: 46px; }
       .sobre-inner { flex-direction: column; align-items: center; text-align: center; }
-      .sobre-foto { width: 96px; height: 96px; }
       .credenciais { justify-content: center; }
     }
   </style>
@@ -379,12 +379,12 @@
   <section class="dor">
     <div class="container">
       <h2>Eu sei exatamente como você se sente.</h2>
-      <ul class="cena-list">
-        <li>Você aceita mais uma tarefa mesmo com a agenda cheia, responde mensagem fora do horário, revisa três vezes antes de entregar e ainda pensa que podia ter feito melhor.</li>
-        <li>Você sai da reunião decidida a provar valor, assume o que ninguém quis assumir e volta pra mesa já planejando como vai dar conta sozinha. Porque no fundo acredita que, se não fizer, algo vai sair errado.</li>
-        <li>Você vive em alerta: se o cliente reclama, se o chefe muda o tom, se o faturamento oscila... seu corpo já entende como sinal de perigo, e você trabalha dobrado pra evitar qualquer risco.</li>
-        <li>O medo de não ser suficiente faz você dizer "deixa que eu resolvo", mesmo cansada, e virar a pessoa que sempre entrega, mas quase nunca é promovida no ritmo que poderia.</li>
-      </ul>
+      <div class="cena-grid">
+        <div class="cena-card">Aceita mais uma tarefa mesmo com a agenda cheia, responde mensagem fora do horário, revisa três vezes antes de entregar e ainda pensa que podia ter feito melhor.</div>
+        <div class="cena-card">Sai da reunião decidida a provar valor, assume o que ninguém quis assumir e já volta planejando como vai dar conta sozinha.</div>
+        <div class="cena-card">Vive em alerta: se o cliente reclama, se o chefe muda o tom, se o faturamento oscila... seu corpo entende como sinal de perigo e você trabalha dobrado.</div>
+        <div class="cena-card">O medo de não ser suficiente faz você dizer "deixa que eu resolvo", mesmo cansada, e virar a pessoa que entrega, mas quase nunca é promovida no ritmo que poderia.</div>
+      </div>
     </div>
   </section>
 
@@ -392,17 +392,16 @@
   <section class="para-quem">
     <div class="container">
       <h2>Esse diagnóstico é pra você se...</h2>
-      <ul class="check-list">
-        <li>Você trabalha muito, entrega tudo, mas sente que nunca é suficiente e está ficando para trás</li>
-        <li>Você vive no automático: resolve, ajuda, assume, mas não cresce na mesma proporção</li>
-        <li>Você se perdeu no meio de tantas tarefas, vive cansada e não sente mais prazer no que faz</li>
-        <li>No CLT você segura o time. No negócio você segura cliente, operação e decisões, tudo ao mesmo tempo</li>
-        <li>Você já percebeu que faz mais do que deveria, mas não consegue parar</li>
-        <li>Você quer ser reconhecida, crescer e ganhar mais, sem precisar se provar o tempo todo</li>
-        <li>Você já entendeu que não é falta de capacidade, mas ainda não sabe o que mudar</li>
-        <li>Você quer sair do padrão de "dar conta de tudo" e começar a crescer com estratégia</li>
-        <li>Você quer clareza prática: o que continuar, o que parar e o que precisa mudar agora</li>
-      </ul>
+      <div class="check-grid">
+        <div class="check-item">Trabalha muito, mas sente que nunca é suficiente e está ficando para trás</div>
+        <div class="check-item">Resolve, ajuda, assume, mas não cresce na mesma proporção</div>
+        <div class="check-item">Se perdeu no meio de tantas tarefas e não sente mais prazer no que faz</div>
+        <div class="check-item">Segura o time no CLT ou segura cliente, operação e decisões no negócio</div>
+        <div class="check-item">Já percebeu que faz mais do que deveria, mas não consegue parar</div>
+        <div class="check-item">Quer crescer sem precisar se provar o tempo todo</div>
+        <div class="check-item">Sabe que não é falta de capacidade, mas ainda não sabe o que mudar</div>
+        <div class="check-item">Quer clareza: o que continuar, o que parar e o que mudar agora</div>
+      </div>
     </div>
   </section>
 
@@ -410,7 +409,7 @@
   <section class="entrega">
     <div class="container">
       <h2>O que você vai receber</h2>
-      <p class="intro">Um mapa claro do seu padrão profissional.</p>
+      <p class="intro">Um mapa claro do seu padrão profissional. Acesso imediato após a compra.</p>
       <div class="entrega-cards">
 
         <div class="entrega-card">
@@ -424,12 +423,12 @@
         </div>
 
         <div class="entrega-card">
-          <div class="ec-label">Parte 2</div>
+          <div class="ec-label">Parte 2 — Bônus incluído</div>
           <strong>Manual Personalizado do seu Padrão Profissional</strong>
           <ul class="sub-items">
-            <li>Como você age no trabalho e no negócio: sob pressão, em grupo, nas decisões importantes</li>
+            <li>Como você age sob pressão, em grupo e nas decisões importantes</li>
             <li>Onde sua força vira excesso e começa a te sobrecarregar</li>
-            <li>O padrão invisível que te faz trabalhar muito e crescer menos do que poderia</li>
+            <li>O padrão invisível que te faz trabalhar muito e crescer menos</li>
             <li>Microações simples para sair do automático sem perder sua identidade</li>
             <li>Como ser reconhecida, delegar melhor e parar de carregar tudo nas costas</li>
           </ul>
@@ -439,7 +438,7 @@
     </div>
   </section>
 
-  <!-- ANTES E DEPOIS -->
+  <!-- ANTES/DEPOIS -->
   <section class="antes-depois">
     <div class="container">
       <div class="ornament">
@@ -451,17 +450,17 @@
       <div class="ad-grid">
         <div class="ad-col">
           <div class="ad-header sem">Sem o diagnóstico</div>
-          <div class="ad-item sem">Sai aceitando tudo: nova tarefa, cliente, reunião, urgência, mesmo sem espaço na agenda, só pra não parecer que não dá conta.</div>
-          <div class="ad-item sem">Vive ocupada o dia inteiro, mas chega no fim do mês sem crescimento proporcional, dinheiro ou reconhecimento.</div>
-          <div class="ad-item sem">Fica nos bastidores resolvendo tudo, apagando incêndio, enquanto outras aparecem mais.</div>
-          <div class="ad-item sem">Trabalha até cansar, revisa mil vezes e ainda trava na hora de decidir o próximo passo.</div>
+          <div class="ad-item sem">Sai aceitando tudo mesmo sem espaço na agenda, só pra não parecer que não dá conta.</div>
+          <div class="ad-item sem">Vive ocupada, mas chega no fim do mês sem crescimento, dinheiro ou reconhecimento proporcional.</div>
+          <div class="ad-item sem">Fica nos bastidores resolvendo tudo enquanto outras aparecem mais.</div>
+          <div class="ad-item sem">Trabalha até cansar, revisa mil vezes e ainda trava na hora de decidir.</div>
         </div>
         <div class="ad-col">
           <div class="ad-header com">Com o diagnóstico</div>
-          <div class="ad-item com">Aprende a trabalhar com estratégia, não no automático, e para de assumir tudo só por medo ou impulso.</div>
-          <div class="ad-item com">Entende o que realmente gera crescimento e começa a direcionar energia pro que dá retorno.</div>
-          <div class="ad-item com">Sai do papel de quem só sustenta tudo e começa a se posicionar, aparecer e ser reconhecida pelo que entrega.</div>
-          <div class="ad-item com">Passa a decidir com mais clareza, agir sem travar e usar seu padrão como força, sem se esgotar no processo.</div>
+          <div class="ad-item com">Aprende a trabalhar com estratégia e para de assumir tudo só por medo ou impulso.</div>
+          <div class="ad-item com">Entende o que realmente gera crescimento e direciona energia pro que dá retorno.</div>
+          <div class="ad-item com">Sai do papel de quem só sustenta tudo e começa a se posicionar e ser reconhecida.</div>
+          <div class="ad-item com">Passa a decidir com mais clareza, agir sem travar e usar seu padrão como força.</div>
         </div>
       </div>
     </div>
@@ -475,31 +474,31 @@
         <div class="ornament-diamond"></div>
         <div class="ornament-line right"></div>
       </div>
-      <h2>Quem já fez o diagnóstico</h2>
-      <p class="intro">Mais de 115 mulheres já deram o primeiro passo.</p>
+      <h2>Mais de 115 mulheres já fizeram</h2>
+      <p class="intro">O que elas dizem depois do diagnóstico.</p>
       <div class="depo-cards">
 
         <div class="depo-card">
           <div class="depo-stars">★★★★★</div>
-          <p class="depo-texto">"Achei maravilhoso! Muito esclarecedor e motivador. Percebi coisas que nem prestava atenção. Me fez ver como é possível com pequenos atos ter resultados ótimos, muito claro e objetivo. <strong>Acabei de ler e fazer as tarefas e já senti uma transformação acontecendo.</strong>"</p>
+          <p class="depo-texto">"Muito esclarecedor e motivador. Percebi coisas que nem prestava atenção. Me fez ver como é possível com pequenos atos ter resultados ótimos. <strong>Acabei de ler e fazer as tarefas e já senti uma transformação acontecendo.</strong>"</p>
           <span class="depo-autor">Cliente do diagnóstico</span>
         </div>
 
         <div class="depo-card">
           <div class="depo-stars">★★★★★</div>
-          <p class="depo-texto">"Essa análise está sendo um divisor de águas na minha vida. Venho me libertando de tantas amarras. Tenho agora coragem pra fazer tantas coisas que não me permitia. <strong>Como agora me compreendo, me sinto em paz comigo mesma e me respeito mais.</strong> Obrigada por esse trabalho tão lindo e libertador."</p>
+          <p class="depo-texto">"Essa análise está sendo um divisor de águas na minha vida. Tenho agora coragem pra fazer tantas coisas que não me permitia. <strong>Como agora me compreendo, me sinto em paz comigo mesma e me respeito mais.</strong>"</p>
           <span class="depo-autor">Cliente do diagnóstico</span>
         </div>
 
         <div class="depo-card">
           <div class="depo-stars">★★★★★</div>
-          <p class="depo-texto">"Você passa a mensagem de forma tão clara que fiquei impactada com tudo. <strong>Isso abriu minha visão para algumas falhas que estou cometendo e que irei melhorar.</strong>"</p>
+          <p class="depo-texto">"Você passa a mensagem de forma tão clara que fiquei impactada. <strong>Isso abriu minha visão para falhas que estou cometendo e que irei melhorar.</strong>"</p>
           <span class="depo-autor">Cliente do diagnóstico</span>
         </div>
 
         <div class="depo-card">
           <div class="depo-stars">★★★★★</div>
-          <p class="depo-texto">"<strong>Já fez você me ajudou a me reencontrar.</strong> E fazer diferente o que me deixava triste."</p>
+          <p class="depo-texto">"<strong>Você me ajudou a me reencontrar.</strong> E fazer diferente o que me deixava triste."</p>
           <span class="depo-autor">Cliente do diagnóstico</span>
         </div>
 
@@ -516,7 +515,7 @@
           <h2>Analu Figueyra</h2>
           <p class="sub-sobre">Comportamento Profissional Feminino</p>
           <p>Criei esse diagnóstico depois de enxergar um padrão que se repete tanto pra quem é CLT quanto pra quem tem CNPJ: <strong>mulheres competentes que trabalham demais, assumem tudo sozinhas e ainda sentem que estão ficando para trás.</strong></p>
-          <p>Estou aqui pra te mostrar por que você faz tanto e ainda se sente pra trás, e como virar esse jogo agora.</p>
+          <p>Estou aqui pra te mostrar por que você faz tanto e ainda se sente pra trás, e como virar esse jogo.</p>
         </div>
       </div>
       <div class="credenciais">
@@ -563,7 +562,7 @@
         <div class="garantia-num">7</div>
         <div class="garantia-texto">
           <strong>Dias de Garantia Total</strong>
-          <p>Se em 7 dias você não identificar pelo menos um comportamento que te faz assumir mais do que deveria e se sobrecarregar, eu devolvo 100% do valor.</p>
+          <p>Se em 7 dias você não identificar pelo menos um comportamento que te faz assumir mais do que deveria, eu devolvo 100% do valor.</p>
         </div>
       </div>
 
