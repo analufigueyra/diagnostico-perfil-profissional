@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diagnóstico de Perfil Profissional | Analu Figueyra</title>
-  <meta name="description" content="O diagnóstico que revela por que você trabalha tanto, entrega tanto, e ainda sente que nunca é suficiente." />
+  <title>Diagnóstico da Trava Profissional | Analu Figueyra</title>
+  <meta name="description" content="O talento profissional que te trouxe até aqui pode ser o mesmo que está travando o seu próximo nível. Descubra qual força saiu do lugar." />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -47,7 +47,7 @@
     .ornament-line.right { background: linear-gradient(90deg, var(--border2), transparent); }
     .ornament-diamond { width: 6px; height: 6px; background: var(--accent2); transform: rotate(45deg); flex-shrink: 0; }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       background: linear-gradient(180deg, #f0e8f5 0%, #faf7f2 100%);
       padding: 80px 0 72px;
@@ -77,22 +77,18 @@
 
     .hero h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(36px, 8vw, 56px);
-      line-height: 1.15; color: var(--text); margin-bottom: 20px;
+      font-size: clamp(30px, 7vw, 46px);
+      line-height: 1.25; color: var(--text); margin-bottom: 20px;
     }
-
-    .hero h1 em { font-style: italic; color: var(--accent); }
 
     .hero .sub {
       font-size: 17px; color: var(--muted);
-      max-width: 500px; margin: 0 auto 16px; line-height: 1.7;
+      max-width: 520px; margin: 0 auto 16px; line-height: 1.7;
     }
-
-    .hero .sub strong { color: var(--text); }
 
     .hero .sub-small {
       font-size: 14px; color: var(--muted);
-      max-width: 420px; margin: 0 auto 40px; font-style: italic;
+      max-width: 460px; margin: 0 auto 40px; font-style: italic;
     }
 
     .btn {
@@ -108,27 +104,49 @@
     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
     .hero-note { font-size: 12px; color: var(--muted); margin-top: 16px; letter-spacing: 1px; text-transform: uppercase; }
 
-    /* ── DOR ── */
-    .dor h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); line-height: 1.25; color: var(--text); margin-bottom: 28px; }
+    /* RECONHECIMENTO */
+    .reconhecimento h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 32px); line-height: 1.25; color: var(--text); margin-bottom: 28px; text-align: center; }
 
-    .cena-grid {
+    .rec-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
+      margin-bottom: 28px;
     }
 
-    .cena-card {
+    .rec-card {
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 18px 20px;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
+      padding: 20px 20px;
       border-top: 2px solid var(--accent2);
     }
 
-    /* ── PARA QUEM ── */
+    .rec-card .rec-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .rec-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .reconhecimento .fechamento { text-align: center; font-size: 16px; color: var(--text); font-weight: 500; }
+
+    /* MECANISMO */
+    .mecanismo { background: var(--text); color: #fff; }
+    .mecanismo h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 32px); color: #fff; margin-bottom: 20px; text-align: center; }
+    .mecanismo .texto { color: #e0d5e8; font-size: 16px; line-height: 1.7; text-align: center; max-width: 520px; margin: 0 auto 12px; }
+    .mecanismo .convite { color: #c9b8d6; font-size: 14px; font-style: italic; text-align: center; max-width: 480px; margin: 0 auto 32px; }
+
+    .mec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 32px; }
+
+    .mec-card {
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .mec-card .mc-label { font-family: 'DM Serif Display', serif; font-size: 15px; color: var(--accent2); margin-bottom: 6px; }
+    .mec-card p { font-size: 12px; color: #d8c7e0; line-height: 1.5; }
+
+    .mecanismo .fechamento { text-align: center; font-size: 15px; font-style: italic; color: #fff; max-width: 480px; margin: 0 auto; }
+
+    /* PARA QUEM */
     .para-quem { background: var(--bg2); }
     .para-quem h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 28px; }
 
@@ -159,7 +177,7 @@
       margin-top: 4px;
     }
 
-    /* ── ENTREGA ── */
+    /* ENTREGA */
     .entrega h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 10px; }
     .entrega .intro { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
 
@@ -169,7 +187,7 @@
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 24px 26px;
+      padding: 22px 24px;
     }
 
     .entrega-card .ec-label {
@@ -178,71 +196,54 @@
     }
 
     .entrega-card strong {
-      display: block; font-size: 17px; font-weight: 600;
-      color: var(--text); margin-bottom: 12px;
+      display: block; font-size: 16px; font-weight: 600;
+      color: var(--text); margin-bottom: 8px;
       font-family: 'DM Serif Display', serif;
     }
 
-    .sub-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .entrega-card p.desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-    .sub-items li {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 14px; color: var(--muted); line-height: 1.5;
-    }
+    /* 5 PADRÕES */
+    .padroes { background: var(--bg4); }
+    .padroes h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 32px); color: var(--text); margin-bottom: 12px; text-align: center; }
+    .padroes .intro { color: var(--muted); font-size: 15px; text-align: center; max-width: 520px; margin: 0 auto 28px; }
 
-    .sub-items li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-weight: 600; }
+    .padrao-cards { display: flex; flex-direction: column; gap: 12px; }
 
-    /* ── ANTES/DEPOIS ── */
-    .antes-depois { background: var(--bg4); }
-    .antes-depois h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 28px; }
-
-    .ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .ad-col { display: flex; flex-direction: column; gap: 10px; }
-
-    .ad-header {
-      text-align: center; padding: 10px 14px;
-      border-radius: 10px; font-size: 13px; font-weight: 600;
-      letter-spacing: 0.5px; margin-bottom: 4px;
-    }
-
-    .ad-header.sem { background: rgba(180,60,60,0.07); color: #a04040; border: 1px solid rgba(180,60,60,0.2); }
-    .ad-header.com { background: rgba(122,79,160,0.08); color: var(--accent); border: 1px solid rgba(122,79,160,0.2); }
-
-    .ad-item {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 10px; padding: 14px 16px;
-      font-size: 13px; line-height: 1.55; color: var(--muted);
-    }
-
-    .ad-item.com { border-color: rgba(122,79,160,0.2); color: var(--text); }
-
-    /* ── DEPOIMENTOS ── */
-    .depoimentos h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 8px; }
-    .depoimentos .intro { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
-
-    .depo-cards { display: flex; flex-direction: column; gap: 14px; }
-
-    .depo-card {
+    .padrao-card {
       background: #fff;
       border: 1px solid var(--border);
-      border-left: 3px solid var(--accent2);
-      border-radius: 0 12px 12px 0;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+
+    .padrao-card strong { display: block; font-family: 'DM Serif Display', serif; font-size: 16px; color: var(--accent); margin-bottom: 6px; }
+    .padrao-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* AVANÇOS */
+    .avancos h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 32px); color: var(--text); margin-bottom: 8px; text-align: center; }
+    .avancos .intro { color: var(--muted); font-size: 15px; text-align: center; margin-bottom: 28px; }
+
+    .avanco-cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .avanco-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
       padding: 20px 22px;
     }
 
-    .depo-stars { color: var(--gold); font-size: 12px; letter-spacing: 2px; margin-bottom: 10px; }
+    .avanco-contexto { font-size: 13px; color: var(--muted); opacity: 0.75; line-height: 1.5; margin-bottom: 6px; font-style: italic; }
+    .avanco-texto { font-size: 15px; color: var(--text); font-weight: 500; line-height: 1.6; }
 
-    .depo-texto {
-      font-size: 15px; color: var(--muted);
-      line-height: 1.7; font-style: italic; margin-bottom: 10px;
-    }
+    /* FAQ */
+    .faq { background: var(--bg2); }
+    .faq h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 32px); color: var(--text); margin-bottom: 28px; text-align: center; }
+    .faq-item { margin-bottom: 22px; }
+    .faq-item strong { display: block; font-size: 15px; color: var(--text); margin-bottom: 6px; }
+    .faq-item p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-    .depo-texto strong { color: var(--text); font-style: normal; }
-    .depo-autor { font-size: 12px; color: var(--accent); font-weight: 500; }
-
-    /* ── SOBRE ── */
-    .sobre { background: var(--bg2); }
-
+    /* SOBRE */
     .sobre-inner {
       display: flex; gap: 28px;
       align-items: flex-start; margin-bottom: 24px;
@@ -255,9 +256,8 @@
     }
 
     .sobre-texto h2 { font-family: 'DM Serif Display', serif; font-size: clamp(22px, 4vw, 28px); color: var(--text); margin-bottom: 4px; }
-    .sobre .sub-sobre { color: var(--gold); font-size: 13px; font-weight: 500; margin-bottom: 14px; }
+    .sub-sobre { color: var(--gold); font-size: 13px; font-weight: 500; margin-bottom: 14px; }
     .sobre p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
-    .sobre p strong { color: var(--text); }
 
     .credenciais { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 
@@ -267,8 +267,10 @@
       font-size: 12px; color: var(--muted);
     }
 
-    /* ── PREÇO ── */
-    .preco { text-align: center; }
+    .handle { font-size: 13px; color: var(--accent); font-weight: 500; }
+
+    /* PREÇO */
+    .preco { text-align: center; background: var(--bg4); }
     .preco h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 32px; }
 
     .bonus-box {
@@ -291,7 +293,6 @@
     }
 
     .preco-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px; }
-    .preco-riscado { font-size: 14px; color: #bbb; text-decoration: line-through; margin-bottom: 4px; }
 
     .preco-valor {
       font-family: 'DM Serif Display', serif;
@@ -299,7 +300,6 @@
     }
 
     .preco-valor sup { font-family: 'Inter', sans-serif; font-size: 22px; color: var(--muted); font-weight: 400; vertical-align: super; }
-    .preco-parcelado { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
     .preco-pix { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
     .preco-divider { height: 1px; background: var(--border); margin: 20px 0; }
 
@@ -319,7 +319,7 @@
     }
 
     .garantia-box {
-      background: var(--bg2); border: 1px solid var(--border);
+      background: #fff; border: 1px solid var(--border);
       border-radius: 12px; padding: 20px; margin: 0 auto; max-width: 440px;
       display: flex; gap: 16px; align-items: flex-start;
     }
@@ -328,16 +328,16 @@
     .garantia-texto strong { display: block; font-size: 14px; color: var(--text); margin-bottom: 4px; }
     .garantia-texto p { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
-    /* ── CTA FINAL ── */
+    /* CTA FINAL */
     .cta-final {
       text-align: center;
       background: linear-gradient(180deg, var(--bg) 0%, #ede5f5 100%);
       padding: 80px 0;
     }
 
-    .cta-final h2 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 6vw, 42px); color: var(--text); margin-bottom: 12px; line-height: 1.2; }
-    .cta-final h2 em { font-style: italic; color: var(--accent); }
-    .cta-final p { color: var(--muted); font-size: 16px; margin-bottom: 36px; }
+    .cta-final h2 { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 5.5vw, 38px); color: var(--text); margin-bottom: 12px; line-height: 1.3; }
+    .cta-final .sub-final { color: var(--muted); font-size: 16px; font-style: italic; margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-final p.preco-final { color: var(--muted); font-size: 15px; margin-bottom: 36px; }
 
     footer {
       text-align: center; padding: 28px 24px;
@@ -347,11 +347,13 @@
     }
 
     footer a { color: var(--accent); text-decoration: none; }
+    .lock-note { font-size: 12px; color: var(--muted); margin-top: 16px; }
+    .assinatura { font-size: 13px; color: var(--accent); font-style: italic; margin-top: 20px; }
 
     @media (max-width: 520px) {
-      .cena-grid { grid-template-columns: 1fr; }
+      .rec-grid { grid-template-columns: 1fr; }
       .check-grid { grid-template-columns: 1fr; }
-      .ad-grid { grid-template-columns: 1fr; }
+      .mec-grid { grid-template-columns: 1fr 1fr; }
       .preco-box { padding: 28px 18px; }
       .preco-valor { font-size: 46px; }
       .sobre-inner { flex-direction: column; align-items: center; text-align: center; }
@@ -364,26 +366,143 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <span class="tag">Diagnóstico de Perfil Profissional</span>
-      <h1>Você trabalha tanto.<br>Entrega tanto.<br>E ainda sente que <em>nunca é suficiente.</em></h1>
+      <span class="tag">Diagnóstico da Trava Profissional</span>
+      <h1>O talento profissional que te trouxe até aqui pode ser o mesmo que está travando o seu próximo nível.</h1>
       <p class="sub">
-        Entenda o padrão que te mantém <strong>forte por fora e travada por dentro</strong> e saiba exatamente o que precisa mudar agora.
+        Você pode ser responsável, excelente, comunicativa ou rápida, e é justamente essa força que está fazendo você trabalhar demais, se posicionar de menos, ou continuar tentando provar seu valor.
       </p>
-      <p class="sub-small">Para mulheres CLT e CNPJ que cansaram de dar conta de tudo e não crescer como poderiam.</p>
-      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero fazer o diagnóstico</a>
+      <p class="sub-small">Não é mais um teste de perfil. É para mulheres CLT ou CNPJ que já tentaram produtividade, terapia ou teste de perfil, e sentem que o padrão sempre volta.</p>
+      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero descobrir minha trava</a>
       <p class="hero-note">R$37 · Acesso imediato · 7 dias de garantia</p>
     </div>
   </section>
 
-  <!-- DOR -->
-  <section class="dor">
+  <!-- RECONHECIMENTO -->
+  <section class="reconhecimento">
     <div class="container">
-      <h2>Eu sei exatamente como você se sente.</h2>
-      <div class="cena-grid">
-        <div class="cena-card">Aceita mais uma tarefa mesmo com a agenda cheia, responde mensagem fora do horário, revisa três vezes antes de entregar e ainda pensa que podia ter feito melhor.</div>
-        <div class="cena-card">Sai da reunião decidida a provar valor, assume o que ninguém quis assumir e já volta planejando como vai dar conta sozinha.</div>
-        <div class="cena-card">Vive em alerta: se o cliente reclama, se o chefe muda o tom, se o faturamento oscila... seu corpo entende como sinal de perigo e você trabalha dobrado.</div>
-        <div class="cena-card">O medo de não ser suficiente faz você dizer "deixa que eu resolvo", mesmo cansada, e virar a pessoa que entrega, mas quase nunca é promovida no ritmo que poderia.</div>
+      <h2>Isso te soa familiar?</h2>
+      <div class="rec-grid">
+        <div class="rec-card">
+          <div class="rec-label">A responsável</div>
+          <p>Todo mundo confia em você. Por isso todo mundo joga em você.</p>
+        </div>
+        <div class="rec-card">
+          <div class="rec-label">A excelente</div>
+          <p>Entrega acima da média. Por isso demora demais pra colocar algo imperfeito no mundo.</p>
+        </div>
+        <div class="rec-card">
+          <div class="rec-label">A comunicativa</div>
+          <p>Conecta com todo mundo. Mas muda de posição quando sente que alguém deixou de gostar.</p>
+        </div>
+        <div class="rec-card">
+          <div class="rec-label">A rápida</div>
+          <p>Resolve antes de todo mundo. Até o ponto em que ninguém mais aprende a resolver sem ela.</p>
+        </div>
+      </div>
+      <p class="fechamento">Não é falta de talento. É uma força sua trabalhando no lugar errado.</p>
+    </div>
+  </section>
+
+  <!-- MECANISMO -->
+  <section class="mecanismo">
+    <div class="container">
+      <h2>Isso tem uma lógica</h2>
+      <p class="texto">Isso não é falta de disciplina, nem medo de dar certo. É uma força sua, real, que só passou a cobrar um preço que antes não cobrava.</p>
+      <p class="convite">E isso não surgiu ontem. Toda forma de funcionar tem uma história. O diagnóstico não inventa qual é a sua. Ele te ajuda a investigar.</p>
+      <div class="mec-grid">
+        <div class="mec-card">
+          <div class="mc-label">Como começou</div>
+          <p>Um jeito de agir que, em algum momento, te trouxe segurança.</p>
+        </div>
+        <div class="mec-card">
+          <div class="mc-label">No que virou</div>
+          <p>Uma força real: a que te trouxe até aqui.</p>
+        </div>
+        <div class="mec-card">
+          <div class="mc-label">Onde atrapalha</div>
+          <p>O mesmo jeito, agora cobrando um preço que antes não cobrava.</p>
+        </div>
+        <div class="mec-card">
+          <div class="mc-label">O que fazer diferente</div>
+          <p>Continuar usando essa força, só sem deixar que ela mande em você.</p>
+        </div>
+      </div>
+      <p class="fechamento">Isso não é sobre você ser o problema. É sobre uma força sua que ainda está respondendo a uma necessidade antiga.</p>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section class="entrega">
+    <div class="container">
+      <h2>O que é o Diagnóstico da Trava Profissional</h2>
+      <p class="intro">Um raio-x de como você funciona de verdade no trabalho, CLT ou CNPJ. Você responde sobre o que realmente faz no dia a dia, não sobre o que acha que deveria fazer. Acesso imediato após a compra.</p>
+      <div class="entrega-cards">
+
+        <div class="entrega-card">
+          <div class="ec-label">01</div>
+          <strong>Qual força é a sua</strong>
+          <p class="desc">Qual das suas forças mais aparece no trabalho, e como ela se mostra no seu dia a dia.</p>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">02</div>
+          <strong>De onde essa força pode ter vindo</strong>
+          <p class="desc">Um convite pra você mesma reconhecer um momento, sem afirmações prontas sobre a sua história.</p>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">03</div>
+          <strong>O custo invisível</strong>
+          <p class="desc">A promoção que não veio. O preço que você não cobrou. A energia que sobra pros outros e falta pra você.</p>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">04</div>
+          <strong>O ponto de virada</strong>
+          <p class="desc">Não uma lista genérica de dicas. Uma direção específica pro seu padrão, pra testar essa semana.</p>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">05 · Bônus incluído</div>
+          <strong>Manual Personalizado em PDF</strong>
+          <p class="desc">Pra reler quando precisar, compartilhar com quem você confia, e usar como referência no processo.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 PADRÕES -->
+  <section class="padroes">
+    <div class="container">
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line right"></div>
+      </div>
+      <h2>A trava muda de mulher pra mulher</h2>
+      <p class="intro">Em uma, é responsabilidade. Em outra, comunicação. Em outra, análise. Você pode ter mais de uma dessas forças. O diagnóstico não tenta te colocar numa caixa, ele identifica qual delas tende a assumir o comando quando você está sob pressão.</p>
+      <div class="padrao-cards">
+        <div class="padrao-card">
+          <strong>A Executora</strong>
+          <p>Faz, entrega, resolve antes de ser pedida. O que custa: fazer tanto que ninguém percebe o que ela vale, ser reconhecida pelo esforço, não pelo impacto.</p>
+        </div>
+        <div class="padrao-card">
+          <strong>A Comunicadora</strong>
+          <p>Conecta, inspira, mobiliza. O que custa: usar esse brilho pra ser querida em vez de respeitada, aparecer muito, ser levada a sério pouco.</p>
+        </div>
+        <div class="padrao-card">
+          <strong>A Detalhista</strong>
+          <p>Revisa, analisa, quer ter certeza antes de agir. O que custa: a análise que nunca termina, o timing que passa enquanto ela ainda ajusta.</p>
+        </div>
+        <div class="padrao-card">
+          <strong>A Planejadora</strong>
+          <p>Sustenta, organiza, mantém tudo de pé em silêncio. O que custa: ser lembrada quando precisam de ajuda, raramente quando precisam de direção.</p>
+        </div>
+        <div class="padrao-card">
+          <strong>A Adaptada</strong>
+          <p>Se molda a qualquer ambiente pra pertencer. O que custa: perder a própria referência, virar especialista em caber, não em ocupar.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -393,109 +512,75 @@
     <div class="container">
       <h2>Esse diagnóstico é pra você se...</h2>
       <div class="check-grid">
-        <div class="check-item">Trabalha muito, mas sente que nunca é suficiente e está ficando para trás</div>
-        <div class="check-item">Resolve, ajuda, assume, mas não cresce na mesma proporção</div>
-        <div class="check-item">Se perdeu no meio de tantas tarefas e não sente mais prazer no que faz</div>
+        <div class="check-item">Sente que trabalha muito e avança pouco</div>
+        <div class="check-item">Já tentou produtividade, organização ou terapia, e o padrão voltou</div>
+        <div class="check-item">Está cansada de se perguntar "o que há de errado comigo"</div>
+        <div class="check-item">Quer entender por que continua repetindo algo que já sabe que deveria fazer diferente</div>
         <div class="check-item">Segura o time no CLT ou segura cliente, operação e decisões no negócio</div>
-        <div class="check-item">Já percebeu que faz mais do que deveria, mas não consegue parar</div>
         <div class="check-item">Quer crescer sem precisar se provar o tempo todo</div>
-        <div class="check-item">Sabe que não é falta de capacidade, mas ainda não sabe o que mudar</div>
-        <div class="check-item">Quer clareza: o que continuar, o que parar e o que mudar agora</div>
       </div>
     </div>
   </section>
 
-  <!-- O QUE VOCÊ RECEBE -->
-  <section class="entrega">
-    <div class="container">
-      <h2>O que você vai receber</h2>
-      <p class="intro">Um mapa claro do seu padrão profissional. Acesso imediato após a compra.</p>
-      <div class="entrega-cards">
-
-        <div class="entrega-card">
-          <div class="ec-label">Parte 1</div>
-          <strong>Diagnóstico de Perfil Profissional</strong>
-          <ul class="sub-items">
-            <li>21 perguntas que revelam por que você assume tudo sozinha, trabalha além do necessário e ainda sente que nunca é suficiente</li>
-            <li>Identificação do seu perfil predominante: Executora, Comunicadora, Planejadora ou Detalhista</li>
-            <li>Raio-X do comportamento que está custando seu crescimento agora</li>
-          </ul>
-        </div>
-
-        <div class="entrega-card">
-          <div class="ec-label">Parte 2 — Bônus incluído</div>
-          <strong>Manual Personalizado do seu Padrão Profissional</strong>
-          <ul class="sub-items">
-            <li>Como você age sob pressão, em grupo e nas decisões importantes</li>
-            <li>Onde sua força vira excesso e começa a te sobrecarregar</li>
-            <li>O padrão invisível que te faz trabalhar muito e crescer menos</li>
-            <li>Microações simples para sair do automático sem perder sua identidade</li>
-            <li>Como ser reconhecida, delegar melhor e parar de carregar tudo nas costas</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ANTES/DEPOIS -->
-  <section class="antes-depois">
+  <!-- AVANÇOS -->
+  <section class="avancos">
     <div class="container">
       <div class="ornament">
         <div class="ornament-line"></div>
         <div class="ornament-diamond"></div>
         <div class="ornament-line right"></div>
       </div>
-      <h2>O que muda com o diagnóstico</h2>
-      <div class="ad-grid">
-        <div class="ad-col">
-          <div class="ad-header sem">Sem o diagnóstico</div>
-          <div class="ad-item sem">Sai aceitando tudo mesmo sem espaço na agenda, só pra não parecer que não dá conta.</div>
-          <div class="ad-item sem">Vive ocupada, mas chega no fim do mês sem crescimento, dinheiro ou reconhecimento proporcional.</div>
-          <div class="ad-item sem">Fica nos bastidores resolvendo tudo enquanto outras aparecem mais.</div>
-          <div class="ad-item sem">Trabalha até cansar, revisa mil vezes e ainda trava na hora de decidir.</div>
+      <h2>Avanços reais, sem identificar ninguém</h2>
+      <p class="intro">Pequenas mudanças concretas que já aconteceram depois da leitura.</p>
+      <div class="avanco-cards">
+        <div class="avanco-card">
+          <p class="avanco-contexto">Era a que revisava o trabalho de todo mundo antes de aceitar como pronto.</p>
+          <p class="avanco-texto">Parou de revisar o trabalho de quem já confiava, e sobrou tempo pra fazer o que só ela sabia fazer.</p>
         </div>
-        <div class="ad-col">
-          <div class="ad-header com">Com o diagnóstico</div>
-          <div class="ad-item com">Aprende a trabalhar com estratégia e para de assumir tudo só por medo ou impulso.</div>
-          <div class="ad-item com">Entende o que realmente gera crescimento e direciona energia pro que dá retorno.</div>
-          <div class="ad-item com">Sai do papel de quem só sustenta tudo e começa a se posicionar e ser reconhecida.</div>
-          <div class="ad-item com">Passa a decidir com mais clareza, agir sem travar e usar seu padrão como força.</div>
+        <div class="avanco-card">
+          <p class="avanco-contexto">Era o que resolvia tudo antes de qualquer um tentar.</p>
+          <p class="avanco-texto">Aprendeu a esperar a equipe decidir, em vez de resolver por eles primeiro.</p>
+        </div>
+        <div class="avanco-card">
+          <p class="avanco-contexto">Era a que mudava de posição assim que sentia alguém discordando.</p>
+          <p class="avanco-texto">Aprendeu a ouvir uma discordância sem sentir que estava sendo atacada.</p>
+        </div>
+        <div class="avanco-card">
+          <p class="avanco-contexto">Era o que evitava falar de dinheiro com quem já era próximo.</p>
+          <p class="avanco-texto">Aprendeu a cobrar o preço justo de um cliente próximo, sem sentir que estava arriscando a relação.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
-  <section class="depoimentos">
+  <!-- FAQ -->
+  <section class="faq">
     <div class="container">
-      <div class="ornament">
-        <div class="ornament-line"></div>
-        <div class="ornament-diamond"></div>
-        <div class="ornament-line right"></div>
+      <h2>Dúvidas frequentes</h2>
+
+      <div class="faq-item">
+        <strong>É mais um teste de perfil?</strong>
+        <p>Teste de perfil descreve tendências. Esse diagnóstico olha o que você faz no automático, onde isso te ajuda e onde começa a te custar, e o que fazer daqui pra frente. Não termina no rótulo, começa nele.</p>
       </div>
-      <h2>Mais de 115 mulheres já fizeram</h2>
-      <p class="intro">O que elas dizem depois do diagnóstico.</p>
-      <div class="depo-cards">
 
-        <div class="depo-card">
-          <div class="depo-stars">★★★★★</div>
-          <p class="depo-texto">"Eu achava que era organizada. Na prática, eu não deixava ninguém me ajudar. Se alguém oferecia, eu dizia 'tá bom, eu faço' e ficava sobrecarregada. O diagnóstico me mostrou que <strong>eu não tinha dificuldade em pedir ajuda. Eu tinha medo de perder o controle.</strong> Quando entendi isso, parei de carregar tudo sozinha."</p>
-          <span class="depo-autor">Cliente do diagnóstico</span>
-        </div>
+      <div class="faq-item">
+        <strong>Vou receber um resultado genérico?</strong>
+        <p>Não. A leitura é sobre o padrão que mais aparece em você, com base nas suas próprias respostas. Não é um rótulo fixo aplicado do mesmo jeito pra todo mundo.</p>
+      </div>
 
-        <div class="depo-card">
-          <div class="depo-stars">★★★★★</div>
-          <p class="depo-texto">"Eu nunca conseguia dizer não. Aceitava tudo e depois ficava ressentida com todo mundo. Sempre achei que era fraqueza minha. <strong>O diagnóstico me mostrou que o meu não travado tinha uma origem, e que ele estava me custando tempo, energia e oportunidades reais no trabalho.</strong> Hoje consigo recusar sem precisar me justificar por três parágrafos."</p>
-          <span class="depo-autor">Cliente do diagnóstico</span>
-        </div>
+      <div class="faq-item">
+        <strong>Preciso saber alguma coisa sobre minha infância pra responder?</strong>
+        <p>Não. Você responde sobre como age no trabalho hoje. Se um convite pra investigar a origem do seu padrão fizer sentido, ele aparece, nunca como afirmação pronta sobre a sua história.</p>
+      </div>
 
-        <div class="depo-card">
-          <div class="depo-stars">★★★★★</div>
-          <p class="depo-texto">"Eu era a pessoa que achava que só o meu jeito funcionava. Qualquer mudança me irritava, qualquer processo diferente parecia errado. Não via isso como problema, via como padrão de qualidade. <strong>O diagnóstico me mostrou que era resistência com medo de perder o controle disfarçada de perfeccionismo.</strong> Isso mudou como eu lidero e como eu delego."</p>
-          <span class="depo-autor">Cliente do diagnóstico</span>
-        </div>
+      <div class="faq-item">
+        <strong>Isso substitui terapia?</strong>
+        <p>Não. É uma leitura comportamental aplicada ao trabalho: rápida, prática, sem linguagem clínica. Se você já processa sua história em terapia, esse diagnóstico traduz isso em ação no ambiente profissional.</p>
+      </div>
 
+      <div class="faq-item">
+        <strong>E se eu não me identificar com o resultado?</strong>
+        <p>Garantia de 7 dias. Se não fizer sentido pra você, é só pedir reembolso, sem burocracia.</p>
       </div>
     </div>
   </section>
@@ -508,12 +593,13 @@
         <div class="sobre-texto">
           <h2>Analu Figueyra</h2>
           <p class="sub-sobre">Comportamento Profissional Feminino</p>
-          <p>Criei esse diagnóstico depois de enxergar um padrão que se repete tanto pra quem é CLT quanto pra quem tem CNPJ: <strong>mulheres competentes que trabalham demais, assumem tudo sozinhas e ainda sentem que estão ficando para trás.</strong></p>
-          <p>Estou aqui pra te mostrar por que você faz tanto e ainda se sente pra trás, e como virar esse jogo.</p>
         </div>
       </div>
+      <p>Eu aprendi cedo a observar o que estava por trás do comportamento das pessoas, muito antes de qualquer curso ou cargo. Anos depois, 15 anos em comportamento profissional, 10 deles dentro de empresas como parte de RH, um MBA em Gestão de Pessoas e formação como coach pela Febracis me deram linguagem, método e contexto pra aquilo que eu já enxergava.</p>
+      <p>Hoje uso essa combinação pra nomear o que está de fato dirigindo o seu jeito de trabalhar, e mostrar o que muda quando você para de operar no automático.</p>
+      <p class="handle">@analufigueyra</p>
       <div class="credenciais">
-        <span class="cred-item">14 anos em comportamento profissional</span>
+        <span class="cred-item">15 anos em comportamento profissional</span>
         <span class="cred-item">Ex-CLT, 10 anos em RH</span>
         <span class="cred-item">MBA em Gestão de Pessoas</span>
         <span class="cred-item">Coach pela Febracis</span>
@@ -525,30 +611,28 @@
   <!-- PREÇO -->
   <section class="preco" id="checkout">
     <div class="container">
-      <h2>Invista no diagnóstico</h2>
+      <h2>Descubra qual força saiu do lugar</h2>
 
       <div class="bonus-box">
         <div class="bonus-label">Bônus incluído</div>
-        <p><strong>Manual Personalizado do seu Padrão Profissional</strong></p>
-        <p>De R$97,00, você leva de graça junto com o diagnóstico.</p>
+        <p><strong>Manual Personalizado em PDF</strong></p>
+        <p>Você leva junto com o diagnóstico, sem custo adicional.</p>
       </div>
 
       <div class="preco-box">
-        <p class="preco-label">Diagnóstico de Perfil Profissional</p>
-        <p class="preco-riscado">De R$197,00</p>
+        <p class="preco-label">Diagnóstico da Trava Profissional</p>
         <p class="preco-valor"><sup>R$</sup>37</p>
-        <p class="preco-parcelado">ou 8x de R$5,38</p>
         <p class="preco-pix">Pix ou cartão de crédito · Acesso imediato</p>
         <div class="preco-divider"></div>
         <ul class="preco-includes">
-          <li>21 perguntas de diagnóstico do perfil</li>
-          <li>Identificação do seu padrão predominante</li>
-          <li>Manual personalizado por perfil</li>
-          <li>Microações práticas para sair do automático</li>
-          <li>Bônus: Manual do Padrão Profissional (R$97)</li>
+          <li>Diagnóstico completo do seu padrão</li>
+          <li>Convite pra investigar a origem da sua força</li>
+          <li>O custo invisível específico do seu padrão</li>
+          <li>Direção prática pra testar essa semana</li>
+          <li>Bônus: Manual Personalizado em PDF</li>
         </ul>
         <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn" style="width:100%;text-align:center;display:block;">
-          Quero fazer o diagnóstico por R$37
+          Quero meu diagnóstico por R$37
         </a>
       </div>
 
@@ -556,7 +640,7 @@
         <div class="garantia-num">7</div>
         <div class="garantia-texto">
           <strong>Dias de Garantia Total</strong>
-          <p>Se em 7 dias você não identificar pelo menos um comportamento que te faz assumir mais do que deveria, eu devolvo 100% do valor.</p>
+          <p>Se não fizer sentido pra você, é só pedir reembolso, sem burocracia.</p>
         </div>
       </div>
 
@@ -571,9 +655,12 @@
         <div class="ornament-diamond"></div>
         <div class="ornament-line right"></div>
       </div>
-      <h2>Pare de trabalhar no <em>automático.</em><br>Entenda o seu padrão.</h2>
-      <p>Clareza prática. Resultado real. Por R$37.</p>
-      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero fazer o diagnóstico</a>
+      <h2>Você não precisa descobrir o que há de errado com você.</h2>
+      <p class="sub-final">Precisa descobrir quando aquilo que existe de melhor em você começou a trabalhar contra o lugar que você quer ocupar agora.</p>
+      <p class="preco-final">Diagnóstico completo, manual em PDF e garantia de 7 dias, por R$37.</p>
+      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero meu diagnóstico agora</a>
+      <p class="lock-note">Compra segura. Acesso imediato. Garantia de 7 dias sem perguntas.</p>
+      <p class="assinatura">Eu no meu lugar.</p>
     </div>
   </section>
 
