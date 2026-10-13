@@ -182,7 +182,13 @@
     .check-item.nao::before { content: '×'; font-size: 13px; margin-top: 0; color: var(--muted); }
 
     /* ENTREGA */
-    .entrega h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 10px; }
+    .entrega h2 {
+      font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); line-height: 1.25;
+      color: #fff; text-align: center;
+      background: linear-gradient(135deg, #7a4fa0, #5a3080);
+      border-radius: 18px; padding: 24px 28px; margin-bottom: 24px;
+      box-shadow: 0 12px 32px rgba(122,79,160,0.22);
+    }
     .entrega .intro { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
 
     .entrega-cards { display: flex; flex-direction: column; gap: 14px; }
