@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diagnóstico da Trava Profissional | Analu Figueyra</title>
-  <meta name="description" content="O talento profissional que te trouxe até aqui pode ser o mesmo que está travando o seu próximo nível. Descubra qual força saiu do lugar." />
+  <meta name="description" content="O talento que te trouxe até aqui pode ser o mesmo que está travando o seu próximo nível. Descubra qual talento seu saiu do lugar." />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -133,7 +133,8 @@
     .mecanismo .texto { color: #e0d5e8; font-size: 16px; line-height: 1.7; text-align: center; max-width: 520px; margin: 0 auto 12px; }
     .mecanismo .convite { color: #c9b8d6; font-size: 14px; font-style: italic; text-align: center; max-width: 480px; margin: 0 auto 32px; }
 
-    .mec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 32px; }
+    .mecanismo .exemplo { color: #fff; font-size: 15px; text-align: center; max-width: 520px; margin: 0 auto 20px; }
+    .mec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
 
     .mec-card {
       border: 1px solid rgba(255,255,255,0.15);
@@ -142,7 +143,7 @@
     }
 
     .mec-card .mc-label { font-family: 'DM Serif Display', serif; font-size: 15px; color: var(--accent2); margin-bottom: 6px; }
-    .mec-card p { font-size: 12px; color: #d8c7e0; line-height: 1.5; }
+    .mec-card p { font-size: 13px; color: #d8c7e0; line-height: 1.55; }
 
     .mecanismo .fechamento { text-align: center; font-size: 15px; font-style: italic; color: #fff; max-width: 480px; margin: 0 auto; }
 
@@ -177,6 +178,9 @@
       margin-top: 4px;
     }
 
+    .para-quem h2.nao-titulo { margin-top: 44px; }
+    .check-item.nao::before { content: '×'; font-size: 13px; margin-top: 0; color: var(--muted); }
+
     /* ENTREGA */
     .entrega h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 10px; }
     .entrega .intro { color: var(--muted); font-size: 15px; margin-bottom: 28px; }
@@ -202,6 +206,16 @@
     }
 
     .entrega-card p.desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .ancora-box {
+      background: var(--accent-light);
+      border: 1px solid rgba(122,79,160,0.25);
+      border-radius: 14px; padding: 22px 24px; margin-top: 20px;
+    }
+    .ancora-box p { font-size: 15px; color: var(--text); line-height: 1.6; }
+    .ancora-box p + p { margin-top: 8px; }
+
+    .avancos h3 { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--text); text-align: center; margin: 36px 0 16px; }
 
     /* 5 PADRÕES */
     .padroes { background: var(--bg4); }
@@ -353,7 +367,7 @@
     @media (max-width: 520px) {
       .rec-grid { grid-template-columns: 1fr; }
       .check-grid { grid-template-columns: 1fr; }
-      .mec-grid { grid-template-columns: 1fr 1fr; }
+      .mec-grid { grid-template-columns: 1fr; }
       .preco-box { padding: 28px 18px; }
       .preco-valor { font-size: 46px; }
       .sobre-inner { flex-direction: column; align-items: center; text-align: center; }
@@ -367,12 +381,12 @@
   <section class="hero">
     <div class="container">
       <span class="tag">Diagnóstico da Trava Profissional</span>
-      <h1>O talento profissional que te trouxe até aqui pode ser o mesmo que está travando o seu próximo nível.</h1>
+      <h1>O talento que te trouxe até aqui pode ser o mesmo que está travando o seu próximo nível.</h1>
       <p class="sub">
-        Você pode ser responsável, excelente, comunicativa ou rápida, e é justamente essa força que está fazendo você trabalhar demais, se posicionar de menos, ou continuar tentando provar seu valor.
+        É justamente ele que faz você trabalhar demais, se posicionar de menos e continuar provando o seu valor. Enquanto isso, a promoção, o preço justo e o reconhecimento ficam sempre pra depois.
       </p>
-      <p class="sub-small">Não é mais um teste de perfil. É para mulheres CLT ou CNPJ que já tentaram produtividade, terapia ou teste de perfil, e sentem que o padrão sempre volta.</p>
-      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero descobrir minha trava</a>
+      <p class="sub-small">Para mulheres CLT ou CNPJ que já tentaram produtividade, terapia ou teste de perfil, e sentem que o padrão sempre volta.</p>
+      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero descobrir o meu talento fora do lugar</a>
       <p class="hero-note">R$37 · Acesso imediato · 7 dias de garantia</p>
     </div>
   </section>
@@ -388,91 +402,52 @@
         </div>
         <div class="rec-card">
           <div class="rec-label">A excelente</div>
-          <p>Entrega acima da média. Por isso demora demais pra colocar algo imperfeito no mundo.</p>
+          <p>Você entrega acima da média. Por isso demora demais pra colocar algo imperfeito no mundo.</p>
         </div>
         <div class="rec-card">
           <div class="rec-label">A comunicativa</div>
-          <p>Conecta com todo mundo. Mas muda de posição quando sente que alguém deixou de gostar.</p>
+          <p>Você conecta com todo mundo. Mas muda de posição quando sente que alguém deixou de gostar.</p>
         </div>
         <div class="rec-card">
-          <div class="rec-label">A rápida</div>
-          <p>Resolve antes de todo mundo. Até o ponto em que ninguém mais aprende a resolver sem ela.</p>
+          <div class="rec-label">A que sustenta tudo</div>
+          <p>Você mantém tudo de pé sem fazer barulho. Por isso só lembram de você quando algo cai.</p>
         </div>
       </div>
-      <p class="fechamento">Não é falta de talento. É uma força sua trabalhando no lugar errado.</p>
+      <p class="fechamento">Não é falta de talento. É um talento seu trabalhando no lugar errado.</p>
     </div>
   </section>
 
-  <!-- MECANISMO -->
+  <!-- MECANISMO: MAPA DA TRAVA -->
   <section class="mecanismo">
     <div class="container">
       <h2>Isso tem uma lógica</h2>
-      <p class="texto">Isso não é falta de disciplina, nem medo de dar certo. É uma força sua, real, que só passou a cobrar um preço que antes não cobrava.</p>
-      <p class="convite">E isso não surgiu ontem. Toda forma de funcionar tem uma história. O diagnóstico não inventa qual é a sua. Ele te ajuda a investigar.</p>
+      <p class="texto">Todo mundo te disse que isso é autossabotagem. Que existe uma parte sua te boicotando.</p>
+      <p class="texto">Talvez seja o contrário: um talento seu tentando te proteger, do jeito que funcionou lá atrás.</p>
+      <p class="exemplo">Eu chamo isso de <strong>Mapa da Trava</strong>. Veja como ele funciona com um talento só, a Responsabilidade:</p>
       <div class="mec-grid">
         <div class="mec-card">
-          <div class="mc-label">Como começou</div>
-          <p>Um jeito de agir que, em algum momento, te trouxe segurança.</p>
+          <div class="mc-label">1. Origem</div>
+          <p>Lá atrás, dar conta de tudo foi o jeito de ter segurança. Se você resolvesse, nada desandava.</p>
         </div>
         <div class="mec-card">
-          <div class="mc-label">No que virou</div>
-          <p>Uma força real: a que te trouxe até aqui.</p>
+          <div class="mc-label">2. Talento</div>
+          <p>Isso virou responsabilidade: você é a profissional em quem todo mundo confia.</p>
         </div>
         <div class="mec-card">
-          <div class="mc-label">Onde atrapalha</div>
-          <p>O mesmo jeito, agora cobrando um preço que antes não cobrava.</p>
+          <div class="mc-label">3. Trava</div>
+          <p>Hoje você delega e refaz à noite. Assume o que não é seu. E a oportunidade vai pra quem teve tempo de aparecer.</p>
         </div>
         <div class="mec-card">
-          <div class="mc-label">O que fazer diferente</div>
-          <p>Continuar usando essa força, só sem deixar que ela mande em você.</p>
+          <div class="mc-label">4. Reposicionamento</div>
+          <p>Continuar responsável, só que pelo que é seu. A primeira pergunta: "isso é meu, ou eu preciso continuar sendo quem resolve?"</p>
         </div>
       </div>
-      <p class="fechamento">Isso não é sobre você ser o problema. É sobre uma força sua que ainda está respondendo a uma necessidade antiga.</p>
+      <p class="convite">Toda forma de funcionar tem uma história. O diagnóstico não inventa qual é a sua. Ele te ajuda a enxergar.</p>
+      <p class="fechamento">Não tem nada errado com você. Tem algo certo funcionando no lugar errado.</p>
     </div>
   </section>
 
-  <!-- O QUE VOCÊ RECEBE -->
-  <section class="entrega">
-    <div class="container">
-      <h2>O que é o Diagnóstico da Trava Profissional</h2>
-      <p class="intro">Um raio-x de como você funciona de verdade no trabalho, CLT ou CNPJ. Você responde sobre o que realmente faz no dia a dia, não sobre o que acha que deveria fazer. Acesso imediato após a compra.</p>
-      <div class="entrega-cards">
-
-        <div class="entrega-card">
-          <div class="ec-label">01</div>
-          <strong>Qual força é a sua</strong>
-          <p class="desc">Qual das suas forças mais aparece no trabalho, e como ela se mostra no seu dia a dia.</p>
-        </div>
-
-        <div class="entrega-card">
-          <div class="ec-label">02</div>
-          <strong>De onde essa força pode ter vindo</strong>
-          <p class="desc">Um convite pra você mesma reconhecer um momento, sem afirmações prontas sobre a sua história.</p>
-        </div>
-
-        <div class="entrega-card">
-          <div class="ec-label">03</div>
-          <strong>O custo invisível</strong>
-          <p class="desc">A promoção que não veio. O preço que você não cobrou. A energia que sobra pros outros e falta pra você.</p>
-        </div>
-
-        <div class="entrega-card">
-          <div class="ec-label">04</div>
-          <strong>O ponto de virada</strong>
-          <p class="desc">Não uma lista genérica de dicas. Uma direção específica pro seu padrão, pra testar essa semana.</p>
-        </div>
-
-        <div class="entrega-card">
-          <div class="ec-label">05 · Bônus incluído</div>
-          <strong>Manual Personalizado em PDF</strong>
-          <p class="desc">Pra reler quando precisar, compartilhar com quem você confia, e usar como referência no processo.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 5 PADRÕES -->
+  <!-- OS TALENTOS -->
   <section class="padroes">
     <div class="container">
       <div class="ornament">
@@ -480,30 +455,85 @@
         <div class="ornament-diamond"></div>
         <div class="ornament-line right"></div>
       </div>
-      <h2>A trava muda de mulher pra mulher</h2>
-      <p class="intro">Em uma, é responsabilidade. Em outra, comunicação. Em outra, análise. Você pode ter mais de uma dessas forças. O diagnóstico não tenta te colocar numa caixa, ele identifica qual delas tende a assumir o comando quando você está sob pressão.</p>
+      <h2>O talento muda de mulher pra mulher</h2>
+      <p class="intro">Em uma, é responsabilidade. Em outra, conexão. Em outra, excelência. Você pode ter mais de um desses talentos. O diagnóstico não tenta te colocar numa caixa. Ele identifica qual deles assume o comando quando você está sob pressão.</p>
       <div class="padrao-cards">
         <div class="padrao-card">
-          <strong>A Executora</strong>
-          <p>Faz, entrega, resolve antes de ser pedida. O que custa: fazer tanto que ninguém percebe o que ela vale, ser reconhecida pelo esforço, não pelo impacto.</p>
+          <strong>Responsabilidade</strong>
+          <p>Você faz, entrega, resolve antes de ser pedida. Onde trava: fazer tanto que ninguém percebe o que você vale. Ser reconhecida pelo esforço, não pelo impacto.</p>
         </div>
         <div class="padrao-card">
-          <strong>A Comunicadora</strong>
-          <p>Conecta, inspira, mobiliza. O que custa: usar esse brilho pra ser querida em vez de respeitada, aparecer muito, ser levada a sério pouco.</p>
+          <strong>Conexão</strong>
+          <p>Você conecta, inspira, mobiliza. Onde trava: usar esse brilho pra ser querida em vez de respeitada. Aparecer muito e ser levada a sério pouco.</p>
         </div>
         <div class="padrao-card">
-          <strong>A Detalhista</strong>
-          <p>Revisa, analisa, quer ter certeza antes de agir. O que custa: a análise que nunca termina, o timing que passa enquanto ela ainda ajusta.</p>
+          <strong>Excelência</strong>
+          <p>Você revisa, analisa, quer ter certeza antes de agir. Onde trava: a análise que nunca termina, o momento que passa enquanto você ainda ajusta.</p>
         </div>
         <div class="padrao-card">
-          <strong>A Planejadora</strong>
-          <p>Sustenta, organiza, mantém tudo de pé em silêncio. O que custa: ser lembrada quando precisam de ajuda, raramente quando precisam de direção.</p>
+          <strong>Sustentação</strong>
+          <p>Você organiza, sustenta e mantém tudo de pé em silêncio, sem criar conflito. Onde trava: calar quando devia falar e carregar mais do que mostra. Ser lembrada quando precisam de ajuda, raramente quando precisam de direção.</p>
         </div>
         <div class="padrao-card">
-          <strong>A Adaptada</strong>
-          <p>Se molda a qualquer ambiente pra pertencer. O que custa: perder a própria referência, virar especialista em caber, não em ocupar.</p>
+          <strong>E se o seu resultado for a Adaptada?</strong>
+          <p>Ela não é um talento. É uma adaptação: uma máscara que você veste pra conseguir performar e pertencer em qualquer ambiente. Você vira especialista em caber, não em ocupar. O diagnóstico mostra isso, e mostra o que está por baixo da máscara.</p>
         </div>
       </div>
+      <p style="text-align:center;margin-top:28px;"><a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Descobrir o meu talento fora do lugar</a></p>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section class="entrega">
+    <div class="container">
+      <h2>O que é o Diagnóstico da Trava Profissional</h2>
+      <p class="intro">Uma leitura de como você funciona de verdade no trabalho, CLT ou CNPJ. Você responde pelo celular, em cerca de 10 minutos, sobre o que realmente faz no dia a dia, não sobre o que acha que deveria fazer. No final, você recebe o seu Mapa da Trava:</p>
+      <div class="entrega-cards">
+
+        <div class="entrega-card">
+          <div class="ec-label">01</div>
+          <strong>O seu talento predominante</strong>
+          <p class="desc">Qual talento mais assume o comando no seu trabalho, e como ele aparece no seu dia a dia.</p>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">02</div>
+          <strong>Por que ele ficou tão forte</strong>
+          <p class="desc">Esse talento já te protegeu de alguma coisa. A leitura te ajuda a reconhecer do quê, sem afirmações prontas sobre a sua história.</p>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">03</div>
+          <strong>Onde ele virou trava</strong>
+          <p class="desc">A promoção que não veio. O preço que você não cobrou. A energia que sobra pros outros e falta pra você.</p>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">04</div>
+          <strong>O reposicionamento</strong>
+          <p class="desc">Não uma lista de dicas. Uma primeira resposta diferente, específica pro seu talento, pra testar essa semana.</p>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">E ainda</div>
+          <strong>Devolutiva em vídeo do seu talento</strong>
+          <p class="desc">Pra ouvir a leitura explicada, no seu tempo.</p>
+        </div>
+
+        <div class="entrega-card">
+          <div class="ec-label">E ainda</div>
+          <strong>Manual completo em PDF</strong>
+          <p class="desc">Pra reler quando precisar.</p>
+        </div>
+
+      </div>
+
+      <div class="ancora-box">
+        <p>A sessão individual <strong>"Eu no Meu Lugar"</strong> custa R$ 447. Nela, a gente percorre o seu Mapa da Trava inteiro, na sua realidade.</p>
+        <p>O diagnóstico é a primeira parte dessa leitura. <strong>Por R$ 37.</strong></p>
+      </div>
+
+      <p style="text-align:center;margin-top:28px;"><a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero o meu Mapa da Trava por R$37</a></p>
     </div>
   </section>
 
@@ -515,9 +545,16 @@
         <div class="check-item">Sente que trabalha muito e avança pouco</div>
         <div class="check-item">Já tentou produtividade, organização ou terapia, e o padrão voltou</div>
         <div class="check-item">Está cansada de se perguntar "o que há de errado comigo"</div>
-        <div class="check-item">Quer entender por que continua repetindo algo que já sabe que deveria fazer diferente</div>
+        <div class="check-item">Já sabe o que deveria fazer diferente e quer, finalmente, entender por que continua repetindo</div>
         <div class="check-item">Segura o time no CLT ou segura cliente, operação e decisões no negócio</div>
         <div class="check-item">Quer crescer sem precisar se provar o tempo todo</div>
+      </div>
+
+      <h2 class="nao-titulo">Não é pra você se...</h2>
+      <div class="check-grid">
+        <div class="check-item nao">Busca um curso de produtividade com técnicas prontas</div>
+        <div class="check-item nao">Quer suporte terapêutico contínuo. Isso não substitui terapia</div>
+        <div class="check-item nao">Está atrás de uma fórmula que funcione sem nenhum olhar pra dentro</div>
       </div>
     </div>
   </section>
@@ -531,23 +568,27 @@
         <div class="ornament-line right"></div>
       </div>
       <h2>Avanços reais, sem identificar ninguém</h2>
-      <p class="intro">Pequenas mudanças concretas que já aconteceram depois da leitura.</p>
+      <p class="intro">Pequenas mudanças concretas que já aconteceram depois dos atendimentos. Mais de 150 mulheres atendidas.</p>
       <div class="avanco-cards">
         <div class="avanco-card">
           <p class="avanco-contexto">Era a que revisava o trabalho de todo mundo antes de aceitar como pronto.</p>
           <p class="avanco-texto">Parou de revisar o trabalho de quem já confiava, e sobrou tempo pra fazer o que só ela sabia fazer.</p>
         </div>
         <div class="avanco-card">
-          <p class="avanco-contexto">Era o que resolvia tudo antes de qualquer um tentar.</p>
-          <p class="avanco-texto">Aprendeu a esperar a equipe decidir, em vez de resolver por eles primeiro.</p>
-        </div>
-        <div class="avanco-card">
           <p class="avanco-contexto">Era a que mudava de posição assim que sentia alguém discordando.</p>
           <p class="avanco-texto">Aprendeu a ouvir uma discordância sem sentir que estava sendo atacada.</p>
         </div>
         <div class="avanco-card">
-          <p class="avanco-contexto">Era o que evitava falar de dinheiro com quem já era próximo.</p>
-          <p class="avanco-texto">Aprendeu a cobrar o preço justo de um cliente próximo, sem sentir que estava arriscando a relação.</p>
+          <p class="avanco-contexto">Era a empreendedora que dava desconto antes de pedirem, marcava na caderneta e parcelava a perder de vista, pra não arriscar a relação com as clientes.</p>
+          <p class="avanco-texto">Parou de oferecer desconto, deixou a caderneta de lado, diminuiu o parcelamento e passou a se posicionar como dona do negócio, não só como vendedora.</p>
+        </div>
+      </div>
+
+      <h3>E o que a leitura costuma revelar</h3>
+      <div class="avanco-cards">
+        <div class="avanco-card">
+          <p class="avanco-contexto">Era a que entregava tudo, revisava tudo e carregava tudo.</p>
+          <p class="avanco-texto">A competência dela não estava servindo ao negócio. Estava servindo pra provar que ela continuava indispensável.</p>
         </div>
       </div>
     </div>
@@ -560,27 +601,37 @@
 
       <div class="faq-item">
         <strong>É mais um teste de perfil?</strong>
-        <p>Teste de perfil descreve tendências. Esse diagnóstico olha o que você faz no automático, onde isso te ajuda e onde começa a te custar, e o que fazer daqui pra frente. Não termina no rótulo, começa nele.</p>
+        <p>Teste de perfil te dá um rótulo. Aqui você descobre qual talento seu assumiu o comando, onde ele está te custando e qual é a primeira resposta diferente. O rótulo é o começo, não o fim.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Quanto tempo leva?</strong>
+        <p>Cerca de 10 minutos, pelo celular. Você responde sobre o que já faz todo dia.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Como eu recebo o acesso?</strong>
+        <p>Assim que o pagamento é aprovado, você recebe por e-mail o acesso ao diagnóstico, ao vídeo e ao manual.</p>
       </div>
 
       <div class="faq-item">
         <strong>Vou receber um resultado genérico?</strong>
-        <p>Não. A leitura é sobre o padrão que mais aparece em você, com base nas suas próprias respostas. Não é um rótulo fixo aplicado do mesmo jeito pra todo mundo.</p>
+        <p>Não. A leitura é sobre o talento que mais aparece em você, com base nas suas próprias respostas.</p>
       </div>
 
       <div class="faq-item">
         <strong>Preciso saber alguma coisa sobre minha infância pra responder?</strong>
-        <p>Não. Você responde sobre como age no trabalho hoje. Se um convite pra investigar a origem do seu padrão fizer sentido, ele aparece, nunca como afirmação pronta sobre a sua história.</p>
+        <p>Não. Você responde sobre como age no trabalho hoje. Se um convite pra investigar a origem fizer sentido, ele aparece, nunca como afirmação pronta sobre a sua história.</p>
       </div>
 
       <div class="faq-item">
         <strong>Isso substitui terapia?</strong>
-        <p>Não. É uma leitura comportamental aplicada ao trabalho: rápida, prática, sem linguagem clínica. Se você já processa sua história em terapia, esse diagnóstico traduz isso em ação no ambiente profissional.</p>
+        <p>Não. É uma leitura comportamental aplicada ao trabalho, prática e sem linguagem clínica. Se você já faz terapia, ela traduz o que você entende em ação no ambiente profissional.</p>
       </div>
 
       <div class="faq-item">
         <strong>E se eu não me identificar com o resultado?</strong>
-        <p>Garantia de 7 dias. Se não fizer sentido pra você, é só pedir reembolso, sem burocracia.</p>
+        <p>Se você terminar a leitura e não reconhecer pelo menos uma lógica sua que não enxergava antes, eu devolvo os seus R$ 37. Sete dias, sem perguntas.</p>
       </div>
     </div>
   </section>
@@ -595,8 +646,8 @@
           <p class="sub-sobre">Comportamento Profissional Feminino</p>
         </div>
       </div>
-      <p>Eu aprendi cedo a observar o que estava por trás do comportamento das pessoas, muito antes de qualquer curso ou cargo. Anos depois, 18 anos em comportamento profissional, formada em RH desde 2008, um MBA em Gestão de Pessoas e formação como coach pela Febracis me deram linguagem, método e contexto pra aquilo que eu já enxergava.</p>
-      <p>Hoje uso essa combinação pra nomear o que está de fato dirigindo o seu jeito de trabalhar, e mostrar o que muda quando você para de operar no automático.</p>
+      <p>Eu aprendi cedo a perceber o clima antes de as coisas acontecerem. Virou o meu maior talento. Por muito tempo, foi também o meu maior pedágio.</p>
+      <p>Depois, estudei pra dar nome ao que eu já enxergava. Hoje uso tudo isso pra mostrar o que está de fato dirigindo o seu jeito de trabalhar, e o que muda quando o seu talento volta pro lugar certo.</p>
       <p class="handle">@analufigueyra</p>
       <div class="credenciais">
         <span class="cred-item">18 anos em comportamento profissional</span>
@@ -604,6 +655,7 @@
         <span class="cred-item">MBA em Gestão de Pessoas</span>
         <span class="cred-item">Coach pela Febracis</span>
         <span class="cred-item">Analista de Perfil Comportamental</span>
+        <span class="cred-item">Mais de 150 mulheres atendidas</span>
       </div>
     </div>
   </section>
@@ -611,13 +663,7 @@
   <!-- PREÇO -->
   <section class="preco" id="checkout">
     <div class="container">
-      <h2>Descubra qual força saiu do lugar</h2>
-
-      <div class="bonus-box">
-        <div class="bonus-label">Bônus incluído</div>
-        <p><strong>Manual Personalizado em PDF</strong></p>
-        <p>Você leva junto com o diagnóstico, sem custo adicional.</p>
-      </div>
+      <h2>Descubra qual talento seu saiu do lugar</h2>
 
       <div class="preco-box">
         <p class="preco-label">Diagnóstico da Trava Profissional</p>
@@ -625,22 +671,23 @@
         <p class="preco-pix">Pix ou cartão de crédito · Acesso imediato</p>
         <div class="preco-divider"></div>
         <ul class="preco-includes">
-          <li>Diagnóstico completo do seu padrão</li>
-          <li>Convite pra investigar a origem da sua força</li>
-          <li>O custo invisível específico do seu padrão</li>
-          <li>Direção prática pra testar essa semana</li>
-          <li>Bônus: Manual Personalizado em PDF</li>
+          <li>O seu talento predominante</li>
+          <li>Por que ele ficou tão forte</li>
+          <li>Onde ele virou trava</li>
+          <li>O reposicionamento pra testar essa semana</li>
+          <li>Devolutiva em vídeo do seu talento</li>
+          <li>Manual completo em PDF</li>
         </ul>
         <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn" style="width:100%;text-align:center;display:block;">
-          Quero meu diagnóstico por R$37
+          Quero o meu Mapa da Trava por R$37
         </a>
       </div>
 
       <div class="garantia-box">
         <div class="garantia-num">7</div>
         <div class="garantia-texto">
-          <strong>Dias de Garantia Total</strong>
-          <p>Se não fizer sentido pra você, é só pedir reembolso, sem burocracia.</p>
+          <strong>Dias de garantia</strong>
+          <p>Se você terminar a leitura e não reconhecer pelo menos uma lógica sua que não enxergava antes, eu devolvo os seus R$ 37. Sem perguntas.</p>
         </div>
       </div>
 
@@ -657,9 +704,9 @@
       </div>
       <h2>Você não precisa descobrir o que há de errado com você.</h2>
       <p class="sub-final">Precisa descobrir quando aquilo que existe de melhor em você começou a trabalhar contra o lugar que você quer ocupar agora.</p>
-      <p class="preco-final">Diagnóstico completo, manual em PDF e garantia de 7 dias, por R$37.</p>
-      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero meu diagnóstico agora</a>
-      <p class="lock-note">Compra segura. Acesso imediato. Garantia de 7 dias sem perguntas.</p>
+      <p class="preco-final">Seu Mapa da Trava, a devolutiva em vídeo e o manual em PDF, por R$37.</p>
+      <a href="https://pay.kiwify.com.br/dNIqzY1" class="btn">Quero ocupar o meu lugar</a>
+      <p class="lock-note">Compra segura. Acesso imediato. Se você não se enxergar na leitura, devolvo o seu dinheiro em até 7 dias.</p>
       <p class="assinatura">Eu no meu lugar.</p>
     </div>
   </section>
