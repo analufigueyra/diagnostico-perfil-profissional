@@ -325,7 +325,12 @@
 
     /* PREÇO */
     .preco { text-align: center; background: var(--bg4); }
-    .preco h2 { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); color: var(--text); margin-bottom: 32px; }
+    .preco h2 {
+      font-family: 'DM Serif Display', serif; font-size: clamp(24px, 5vw, 34px); line-height: 1.25;
+      color: #fff; background: linear-gradient(135deg, #7a4fa0, #5a3080);
+      border-radius: 18px; padding: 24px 28px; margin: 0 auto 32px; max-width: 440px;
+      box-shadow: 0 12px 32px rgba(122,79,160,0.22);
+    }
 
     .bonus-box {
       background: rgba(160,120,48,0.06);
